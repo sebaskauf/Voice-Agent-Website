@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-const words = ['Kundenservice', 'Terminplanung', 'Anrufannahme', 'Workflow'];
-const colors = ['from-primary to-accent', 'from-accent to-primary', 'from-primary via-accent to-primary', 'from-accent via-primary to-accent'];
+const words = ['nach Feierabend', 'in Stoßzeiten', 'vor der Öffnung', 'am Wochenende'];
+const colors = ['from-primary via-accent to-primary', 'from-accent to-primary', 'from-primary to-accent', 'from-accent via-primary to-accent'];
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);

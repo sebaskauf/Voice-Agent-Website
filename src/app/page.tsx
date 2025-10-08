@@ -65,13 +65,13 @@ export default function Home() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">nach Feierabend</span>
+                  <span className="relative z-10 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">nach Feierabend</span>
                   <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path d="M0 8 Q75 4 150 6 Q225 8 300 6" stroke="url(#paint0_linear_underline)" strokeWidth="5" strokeLinecap="round" fill="none"/>
                     <defs>
                       <linearGradient id="paint0_linear_underline" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#2196F3"/>
-                        <stop offset="0.5" stopColor="#1976D2"/>
+                        <stop offset="0.5" stopColor="#4CAF50"/>
                         <stop offset="1" stopColor="#2196F3"/>
                       </linearGradient>
                     </defs>

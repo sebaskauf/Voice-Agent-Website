@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-bgDark/98 border-b border-borderLight shadow-sm">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white border-b border-borderLight shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo with 3/4 cut-out O */}

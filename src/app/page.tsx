@@ -57,9 +57,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-8 sm:mt-12 px-4">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4">
             <div className="animate-fadeIn">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <div>
                   <span className="text-white">Optimieren Sie </span>
                   <span className="inline-block ml-2">
@@ -83,29 +83,29 @@ export default function Home() {
                   </span>
                 </div>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
                 Automatisieren Sie Patientenanfragen und Terminbuchungen für Ihre Arztpraxis – 24/7, DSGVO-konform, messbar
               </p>
 
               {/* Trust Elements - Interactive */}
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 animate-fadeIn animation-delay-300">
-                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-10 animate-fadeIn animation-delay-300 max-w-2xl mx-auto">
+                <div className="group flex items-center gap-1.5 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2.5 py-1.5 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">DSGVO-konform</span>
+                  <span className="text-xs sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">DSGVO-konform</span>
                 </div>
-                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-1.5 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2.5 py-1.5 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">Deutsch & Mehrsprachig</span>
+                  <span className="text-xs sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Mehrsprachig</span>
                 </div>
-                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-1.5 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2.5 py-1.5 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">Integration in 48h</span>
+                  <span className="text-xs sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Setup in 48h</span>
                 </div>
               </div>
 

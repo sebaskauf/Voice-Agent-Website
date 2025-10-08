@@ -11,7 +11,7 @@ export default function Footer() {
               Optim<span className="text-primary">AI</span>te
             </h3>
             <p className="text-textSecondary">
-              Innovative KI-Lösungen für Ihr Unternehmen
+              KI-Telefon-Assistenten für Arztpraxen – 24/7, DSGVO-konform, auf Deutsch
             </p>
           </div>
 

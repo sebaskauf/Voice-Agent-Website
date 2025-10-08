@@ -31,7 +31,7 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <section id="home" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-32 pb-32">
+        <section id="home" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-32 pb-20 sm:pb-32">
           {/* Wave background */}
           <WaveBackground />
 
@@ -82,37 +82,37 @@ export default function Home() {
                   </span>
                 </div>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200">
                 Automatisieren Sie Patientenanfragen und Terminbuchungen für Ihre Arztpraxis – 24/7, DSGVO-konform, messbar
               </p>
 
-              {/* Trust Elements */}
+              {/* Trust Elements - Interactive */}
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 animate-fadeIn animation-delay-300">
-                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium">DSGVO-konform</span>
+                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">DSGVO-konform</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium">Deutsch & Mehrsprachig</span>
+                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">Deutsch & Mehrsprachig</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-5 h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="text-sm sm:text-base text-white font-medium">Integration in 48h</span>
+                  <span className="text-sm sm:text-base text-white font-medium group-hover:text-primary transition-colors duration-300">Integration in 48h</span>
                 </div>
               </div>
 
               <a
-                href="/kontakt"
+                href="/#voice-demo"
                 className="group inline-block bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
               >
-                <span className="relative z-10">Jetzt starten</span>
+                <span className="relative z-10">Kostenlos testen</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </a>
             </div>

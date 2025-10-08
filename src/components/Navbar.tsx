@@ -6,6 +6,13 @@ import { useState } from 'react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [showFeaturesDropdown, setShowFeaturesDropdown] = useState(false);
+
+  const features = [
+    { name: 'Schnelle Integration', href: '/#features' },
+    { name: 'Höchste Sicherheit', href: '/#features' },
+    { name: 'Skalierbare Lösungen', href: '/#features' },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-bgDark/95 border-b border-white/[0.06]">
@@ -34,13 +41,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Resend Style */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             <Link
               href="/#home"
               onMouseEnter={() => setHoveredLink('home')}
               onMouseLeave={() => setHoveredLink(null)}
-              className="text-fg/70 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
+              className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Home
             </Link>
@@ -48,46 +55,61 @@ export default function Navbar() {
               href="/#dashboard"
               onMouseEnter={() => setHoveredLink('dashboard')}
               onMouseLeave={() => setHoveredLink(null)}
-              className="text-fg/70 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
+              className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Dashboard
             </Link>
 
-            {/* Features Dropdown Style */}
-            <div className="relative">
-              <Link
-                href="/#features"
-                onMouseEnter={() => setHoveredLink('features')}
-                onMouseLeave={() => setHoveredLink(null)}
-                className="text-fg/70 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px] flex items-center gap-1"
+            {/* Features Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowFeaturesDropdown(true)}
+              onMouseLeave={() => setShowFeaturesDropdown(false)}
+            >
+              <button
+                className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px] flex items-center gap-1"
               >
                 Features
                 <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === 'features' ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform duration-200 ${showFeaturesDropdown ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </button>
+
+              {/* Dropdown Menu with extended hover area */}
+              {showFeaturesDropdown && (
+                <div className="absolute top-full left-0 pt-2 -ml-4">
+                  {/* Invisible bridge to prevent gap */}
+                  <div className="h-2 w-full"></div>
+                  <div className="w-64 bg-gradient-to-b from-[#0A1628] to-[#0D1B2F] border border-primary/20 rounded-lg shadow-2xl shadow-primary/10 overflow-hidden animate-fadeIn">
+                    {features.map((feature, index) => (
+                      <Link
+                        key={index}
+                        href={feature.href}
+                        className="block px-4 py-3 text-white/80 hover:text-white hover:bg-primary/10 transition-all duration-200 border-b border-white/5 last:border-b-0"
+                        onClick={() => setShowFeaturesDropdown(false)}
+                      >
+                        <span className="text-[15px] font-medium">{feature.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Divider */}
             <div className="h-6 w-px bg-white/10 mx-2"></div>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <Link
               href="/kontakt"
-              className="text-fg/70 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-medium px-6 py-2 rounded-md transition-all duration-200 text-[15px] ml-1 shadow-lg shadow-primary/20"
             >
-              Log In
-            </Link>
-            <Link
-              href="/kontakt"
-              className="bg-white hover:bg-white/90 text-bgDark font-medium px-5 py-2 rounded-md transition-all duration-200 text-[15px] ml-1"
-            >
-              Jetzt starten
+              Kontakt aufnehmen
             </Link>
           </div>
 
@@ -95,7 +117,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-fg/70 hover:text-fg focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-md p-2 transition-colors duration-200"
+              className="text-white/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-md p-2 transition-colors duration-200"
               aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={isOpen}
             >
@@ -131,32 +153,39 @@ export default function Navbar() {
             <div className="flex flex-col space-y-1">
               <Link
                 href="/#home"
-                className="text-fg/70 hover:text-fg hover:bg-white/[0.03] font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/#dashboard"
-                className="text-fg/70 hover:text-fg hover:bg-white/[0.03] font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Dashboard
               </Link>
-              <Link
-                href="/#features"
-                className="text-fg/70 hover:text-fg hover:bg-white/[0.03] font-medium rounded-md px-4 py-2.5 transition-all duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Features
-              </Link>
+
+              {/* Mobile Features Section */}
+              <div className="text-white/60 text-xs font-semibold px-4 pt-2 pb-1">FEATURES</div>
+              {features.map((feature, index) => (
+                <Link
+                  key={index}
+                  href={feature.href}
+                  className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {feature.name}
+                </Link>
+              ))}
+
               <div className="h-px bg-white/[0.06] my-2"></div>
               <Link
                 href="/kontakt"
-                className="bg-white hover:bg-white/90 text-bgDark font-medium rounded-md px-4 py-2.5 transition-all duration-200 text-center"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-medium rounded-md px-4 py-2.5 transition-all duration-200 text-center shadow-lg shadow-primary/20"
                 onClick={() => setIsOpen(false)}
               >
-                Jetzt starten
+                Kontakt aufnehmen
               </Link>
             </div>
           </div>

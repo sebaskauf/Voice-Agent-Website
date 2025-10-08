@@ -110,16 +110,21 @@ export default function DashboardSection() {
   const minValue = Math.min(...currentGraphData);
 
   // Calculate bar height in pixels for better visibility
-  const maxHeightPx = 160; // Match container height (h-40 = 160px)
+  const maxHeightPx = 160; // Desktop container height (h-40 = 160px)
   const minHeightPx = 40;  // Minimum visible height
+  const maxHeightMobile = 80; // Mobile max height (h-24 = 96px, leave some space)
+  const minHeightMobile = 20; // Mobile min height
 
-  const getBarHeight = (value: number) => {
+  const getBarHeight = (value: number, isMobile: boolean = false) => {
     const range = maxValue - minValue;
-    if (range === 0) return maxHeightPx; // If all values are the same
+    const maxH = isMobile ? maxHeightMobile : maxHeightPx;
+    const minH = isMobile ? minHeightMobile : minHeightPx;
 
-    const heightRange = maxHeightPx - minHeightPx;
+    if (range === 0) return maxH; // If all values are the same
+
+    const heightRange = maxH - minH;
     const normalizedValue = (value - minValue) / range;
-    return minHeightPx + (normalizedValue * heightRange);
+    return minH + (normalizedValue * heightRange);
   };
 
   const metrics = [
@@ -347,10 +352,10 @@ export default function DashboardSection() {
 
               {/* Dynamic Graph */}
               <div className="bg-white/[0.02] backdrop-blur-sm rounded-xl border border-white/[0.05] p-3 sm:p-4 md:p-6">
-                <h4 className="text-xs sm:text-sm text-fg/60 mb-3 sm:mb-4">
+                <h4 className="text-xs sm:text-sm text-fg/60 mb-6 sm:mb-4">
                   {getMetricTitle()} - Letzte {timeRange} Tage
                 </h4>
-                <div className="relative h-32 sm:h-40 mb-6 sm:mb-8">
+                <div className="relative h-24 sm:h-40 mb-10 sm:mb-8">
                   <div className="absolute inset-0 flex items-end justify-between gap-1">
                     {currentGraphData.map((value, index) => {
                       const displayValue = selectedMetric === 'avgDuration'
@@ -359,7 +364,9 @@ export default function DashboardSection() {
                         ? `${Math.round(value)}€`
                         : Math.round(value);
 
-                      const barHeightPx = getBarHeight(value);
+                      // Calculate height for both mobile and desktop
+                      const barHeightDesktop = getBarHeight(value, false);
+                      const barHeightMobile = getBarHeight(value, true);
 
                       return (
                         <div
@@ -371,13 +378,24 @@ export default function DashboardSection() {
                           }}
                         >
                           <div
-                            className="w-full bg-gradient-to-t from-primary to-accent rounded-t-lg relative group"
+                            className="w-full bg-gradient-to-t from-primary to-accent rounded-t-lg relative group sm:hidden"
                             style={{
-                              height: `${barHeightPx}px`,
+                              height: `${barHeightMobile}px`,
                               transition: 'height 0.4s ease-out',
                             }}
                           >
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-bgDark/90 px-2 py-1 rounded text-xs text-primary font-semibold whitespace-nowrap z-10 pointer-events-none">
+                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-bgDark/95 px-2 py-1 rounded text-xs text-primary font-semibold whitespace-nowrap z-20 pointer-events-none shadow-lg border border-primary/20">
+                              {displayValue}
+                            </div>
+                          </div>
+                          <div
+                            className="hidden sm:block w-full bg-gradient-to-t from-primary to-accent rounded-t-lg relative group"
+                            style={{
+                              height: `${barHeightDesktop}px`,
+                              transition: 'height 0.4s ease-out',
+                            }}
+                          >
+                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-bgDark/95 px-2 py-1 rounded text-xs text-primary font-semibold whitespace-nowrap z-20 pointer-events-none shadow-lg border border-primary/20">
                               {displayValue}
                             </div>
                           </div>

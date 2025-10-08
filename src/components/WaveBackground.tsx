@@ -27,9 +27,9 @@ export default function WaveBackground() {
           </linearGradient>
         </defs>
 
-        {/* Wave 1 - Bottom wave - smaller and wavier */}
+        {/* Wave 1 - Bottom wave - irregular pattern */}
         <path
-          d="M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z"
+          d="M0,580 Q200,560 450,590 Q680,610 900,570 Q1150,550 1440,585 L1440,800 L0,800 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-slow"
         >
@@ -38,16 +38,16 @@ export default function WaveBackground() {
             dur="20s"
             repeatCount="indefinite"
             values="
-              M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z;
-              M0,580 Q240,620 480,580 Q720,540 960,580 Q1200,620 1440,580 L1440,800 L0,800 Z;
-              M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z
+              M0,580 Q200,560 450,590 Q680,610 900,570 Q1150,550 1440,585 L1440,800 L0,800 Z;
+              M0,580 Q200,605 450,570 Q680,555 900,595 Q1150,610 1440,575 L1440,800 L0,800 Z;
+              M0,580 Q200,560 450,590 Q680,610 900,570 Q1150,550 1440,585 L1440,800 L0,800 Z
             "
           />
         </path>
 
-        {/* Wave 2 - Top wave - smaller and wavier */}
+        {/* Wave 2 - Top wave - asymmetric pattern */}
         <path
-          d="M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z"
+          d="M0,160 Q180,145 420,165 Q750,175 950,155 Q1180,148 1440,162 L1440,0 L0,0 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-fast"
         >
@@ -56,16 +56,16 @@ export default function WaveBackground() {
             dur="18s"
             repeatCount="indefinite"
             values="
-              M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z;
-              M0,160 Q240,180 480,160 Q720,140 960,160 Q1200,180 1440,160 L1440,0 L0,0 Z;
-              M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z
+              M0,160 Q180,145 420,165 Q750,175 950,155 Q1180,148 1440,162 L1440,0 L0,0 Z;
+              M0,160 Q180,172 420,152 Q750,158 950,168 Q1180,175 1440,155 L1440,0 L0,0 Z;
+              M0,160 Q180,145 420,165 Q750,175 950,155 Q1180,148 1440,162 L1440,0 L0,0 Z
             "
           />
         </path>
 
-        {/* Wave 3 - Small top wave - wavier */}
+        {/* Wave 3 - Small top wave - scattered pattern */}
         <path
-          d="M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z"
+          d="M0,100 Q220,92 380,105 Q640,108 880,96 Q1100,102 1440,98 L1440,0 L0,0 Z"
           fill="url(#waveGradient2)"
           className="animate-wave-medium"
         >
@@ -74,16 +74,16 @@ export default function WaveBackground() {
             dur="16s"
             repeatCount="indefinite"
             values="
-              M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z;
-              M0,100 Q240,110 480,100 Q720,90 960,100 Q1200,110 1440,100 L1440,0 L0,0 Z;
-              M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z
+              M0,100 Q220,92 380,105 Q640,108 880,96 Q1100,102 1440,98 L1440,0 L0,0 Z;
+              M0,100 Q220,107 380,95 Q640,93 880,106 Q1100,94 1440,103 L1440,0 L0,0 Z;
+              M0,100 Q220,92 380,105 Q640,108 880,96 Q1100,102 1440,98 L1440,0 L0,0 Z
             "
           />
         </path>
 
-        {/* Wave 4 - Bottom wave for depth - smaller and wavier */}
+        {/* Wave 4 - Bottom wave for depth - varied pattern */}
         <path
-          d="M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z"
+          d="M0,680 Q280,665 520,690 Q780,705 1000,675 Q1250,660 1440,685 L1440,800 L0,800 Z"
           fill="url(#waveGradient3)"
           className="animate-wave-slow"
         >
@@ -92,9 +92,9 @@ export default function WaveBackground() {
             dur="22s"
             repeatCount="indefinite"
             values="
-              M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z;
-              M0,680 Q240,710 480,680 Q720,650 960,680 Q1200,710 1440,680 L1440,800 L0,800 Z;
-              M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z
+              M0,680 Q280,665 520,690 Q780,705 1000,675 Q1250,660 1440,685 L1440,800 L0,800 Z;
+              M0,680 Q280,700 520,670 Q780,658 1000,695 Q1250,708 1440,672 L1440,800 L0,800 Z;
+              M0,680 Q280,665 520,690 Q780,705 1000,675 Q1250,660 1440,685 L1440,800 L0,800 Z
             "
           />
         </path>

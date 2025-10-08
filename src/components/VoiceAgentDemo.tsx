@@ -76,7 +76,7 @@ export default function VoiceAgentDemo() {
   };
 
   return (
-    <section id="voice-demo" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-48 pb-28 bg-bgDark">
+    <section id="voice-demo" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-32 pb-28 bg-bgDark">
       {/* Inverted wave at top - matches hero section wave colors */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden pointer-events-none opacity-70 h-40">
         <svg

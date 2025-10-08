@@ -40,7 +40,7 @@ export default function Home() {
           <WaveBackground />
 
           {/* Subtle background gradient - Healthcare theme */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 pointer-events-none"></div>
 
           {/* Minimal floating particles for professional look */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -63,22 +63,20 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                <div className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  <span className="block">Nie wieder verpasste Anrufe</span>
-                  <span className="relative inline-block">
-                    <span className="relative z-10">nach Feierabend</span>
-                    <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                      <path d="M0 8 Q75 4 150 6 Q225 8 300 6" stroke="url(#paint0_linear_underline)" strokeWidth="5" strokeLinecap="round" fill="none"/>
-                      <defs>
-                        <linearGradient id="paint0_linear_underline" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#2196F3"/>
-                          <stop offset="0.5" stopColor="#4CAF50"/>
-                          <stop offset="1" stopColor="#2196F3"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </span>
-                </div>
+                <span className="block text-fg">Nie wieder verpasste Anrufe</span>
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">nach Feierabend</span>
+                  <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 8 Q75 4 150 6 Q225 8 300 6" stroke="url(#paint0_linear_underline)" strokeWidth="5" strokeLinecap="round" fill="none"/>
+                    <defs>
+                      <linearGradient id="paint0_linear_underline" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#2196F3"/>
+                        <stop offset="0.5" stopColor="#1976D2"/>
+                        <stop offset="1" stopColor="#2196F3"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textSecondary mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
                 <span className="block sm:inline">Ihr KI-Telefon-Assistent nimmt Termine auf, beantwortet Patientenfragen</span>{' '}
@@ -109,10 +107,10 @@ export default function Home() {
 
               <Link
                 href="/#voice-demo"
-                className="group inline-block bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
+                className="group inline-block bg-gradient-to-r from-primary to-blue-600 text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
               >
                 <span className="relative z-10">Kostenlose Demo vereinbaren</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Link>
             </div>
           </div>
@@ -149,7 +147,7 @@ export default function Home() {
             className={`max-w-7xl mx-auto relative z-10 scroll-animate ${featuresVisible ? 'scroll-animate-visible' : ''}`}
           >
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-center mb-12 text-fg">
-              Unsere <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Features</span>
+              Unsere <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Features</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

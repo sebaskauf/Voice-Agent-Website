@@ -63,25 +63,7 @@ export default function WaveBackground() {
           />
         </path>
 
-        {/* Wave 3 - Top large wave */}
-        <path
-          d="M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z"
-          fill="url(#waveGradient1)"
-          className="animate-wave-fast"
-        >
-          <animate
-            attributeName="d"
-            dur="18s"
-            repeatCount="indefinite"
-            values="
-              M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z;
-              M0,200 Q360,250 720,200 T1440,200 L1440,0 L0,0 Z;
-              M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z
-            "
-          />
-        </path>
-
-        {/* Wave 4 - Extra bottom wave for depth - pushed down */}
+        {/* Wave 3 - Extra bottom wave for depth - pushed down */}
         <path
           d="M0,670 Q360,770 720,670 T1440,670 L1440,800 L0,800 Z"
           fill="url(#waveGradient3)"

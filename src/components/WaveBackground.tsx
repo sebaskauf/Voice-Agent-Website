@@ -45,9 +45,9 @@ export default function WaveBackground() {
           />
         </path>
 
-        {/* Wave 2 - Top wave - smaller (pushed up) */}
+        {/* Wave 2 - Top wave - medium size */}
         <path
-          d="M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z"
+          d="M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-fast"
         >
@@ -56,16 +56,16 @@ export default function WaveBackground() {
             dur="18s"
             repeatCount="indefinite"
             values="
-              M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z;
-              M0,120 Q360,150 720,120 T1440,120 L1440,0 L0,0 Z;
-              M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z
+              M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z;
+              M0,180 Q360,220 720,180 T1440,180 L1440,0 L0,0 Z;
+              M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z
             "
           />
         </path>
 
-        {/* Wave 3 - Extra small top wave for smooth transition */}
+        {/* Wave 3 - Small top wave for smooth transition */}
         <path
-          d="M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z"
+          d="M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z"
           fill="url(#waveGradient2)"
           className="animate-wave-medium"
         >
@@ -74,9 +74,9 @@ export default function WaveBackground() {
             dur="16s"
             repeatCount="indefinite"
             values="
-              M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z;
-              M0,60 Q360,40 720,60 T1440,60 L1440,0 L0,0 Z;
-              M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z
+              M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z;
+              M0,110 Q360,90 720,110 T1440,110 L1440,0 L0,0 Z;
+              M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z
             "
           />
         </path>

@@ -35,12 +35,12 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <section id="home" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-32 pb-20 sm:pb-32">
+        <section id="home" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-32 pb-20 sm:pb-32 bg-bgDark">
           {/* Wave background */}
           <WaveBackground />
 
           {/* Subtle background gradient - Healthcare theme */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3 pointer-events-none"></div>
 
           {/* Minimal floating particles for professional look */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">

@@ -11,19 +11,19 @@ export default function WaveBackground() {
       >
         <defs>
           <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38FAFF" stopOpacity="0.05" />
-            <stop offset="50%" stopColor="#0EA5E9" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#38FAFF" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.05" />
+            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.05" />
           </linearGradient>
           <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#0EA5E9" stopOpacity="0.05" />
-            <stop offset="50%" stopColor="#38FAFF" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#4CAF50" stopOpacity="0.05" />
+            <stop offset="50%" stopColor="#2196F3" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#4CAF50" stopOpacity="0.05" />
           </linearGradient>
           <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38FAFF" stopOpacity="0.08" />
-            <stop offset="50%" stopColor="#0EA5E9" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="#38FAFF" stopOpacity="0.08" />
+            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.08" />
+            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.08" />
           </linearGradient>
         </defs>
 

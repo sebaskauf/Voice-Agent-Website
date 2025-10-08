@@ -60,24 +60,30 @@ export default function KontaktPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <main className="min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
         {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/3 via-white to-accent/3"></div>
+
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(14 165 233 / 0.05) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
 
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-fg px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 px-2">
               Termin{' '}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 vereinbaren
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-fg/70 px-4">
+            <p className="text-lg sm:text-xl text-gray-600 px-4">
               Lassen Sie uns gemeinsam die perfekte KI-Lösung für Sie entwickeln
             </p>
           </div>
 
-          <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/[0.08] p-4 sm:p-6 md:p-8 shadow-2xl">
+          <div className="bg-white backdrop-blur-xl rounded-2xl border border-gray-200 p-4 sm:p-6 md:p-8 shadow-2xl shadow-primary/10">
             {submitStatus === 'success' ? (
               /* Success Message */
               <div className="text-center py-12 animate-fadeIn">
@@ -93,18 +99,18 @@ export default function KontaktPage() {
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-fg mb-4">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Erfolgreich gesendet!
                 </h2>
-                <p className="text-xl text-fg/80 mb-2">
+                <p className="text-xl text-gray-700 mb-2">
                   Vielen Dank für Ihre Anfrage!
                 </p>
-                <p className="text-fg/60 mb-8">
+                <p className="text-gray-600 mb-8">
                   Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.
                 </p>
 
                 {/* Redirect Info */}
-                <div className="inline-flex items-center gap-2 text-sm text-fg/50">
+                <div className="inline-flex items-center gap-2 text-sm text-gray-500">
                   <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
@@ -116,7 +122,7 @@ export default function KontaktPage() {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-fg mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-2">
                   Name <span className="text-primary">*</span>
                 </label>
                 <input
@@ -126,14 +132,14 @@ export default function KontaktPage() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-base min-h-[48px]"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-base min-h-[48px]"
                   placeholder="Ihr vollständiger Name"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-fg mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-2">
                   E-Mail <span className="text-primary">*</span>
                 </label>
                 <input
@@ -143,15 +149,15 @@ export default function KontaktPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-base min-h-[48px]"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-base min-h-[48px]"
                   placeholder="ihre.email@beispiel.de"
                 />
               </div>
 
               {/* Praxis (optional) */}
               <div>
-                <label htmlFor="praxis" className="block text-sm font-semibold text-fg mb-2">
-                  Praxis / Unternehmen <span className="text-fg/40 font-normal">(optional)</span>
+                <label htmlFor="praxis" className="block text-sm font-semibold text-gray-800 mb-2">
+                  Praxis / Unternehmen <span className="text-gray-500 font-normal">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -159,14 +165,14 @@ export default function KontaktPage() {
                   name="praxis"
                   value={formData.praxis}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-base min-h-[48px]"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-base min-h-[48px]"
                   placeholder="Name Ihrer Praxis oder Unternehmens"
                 />
               </div>
 
               {/* Ort */}
               <div>
-                <label htmlFor="ort" className="block text-sm font-semibold text-fg mb-2">
+                <label htmlFor="ort" className="block text-sm font-semibold text-gray-800 mb-2">
                   Ort <span className="text-primary">*</span>
                 </label>
                 <input
@@ -176,14 +182,14 @@ export default function KontaktPage() {
                   required
                   value={formData.ort}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-base min-h-[48px]"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-base min-h-[48px]"
                   placeholder="Stadt oder PLZ"
                 />
               </div>
 
               {/* Art des KI-Agenten */}
               <div>
-                <label htmlFor="agentType" className="block text-sm font-semibold text-fg mb-2">
+                <label htmlFor="agentType" className="block text-sm font-semibold text-gray-800 mb-2">
                   Art des KI-Agenten <span className="text-primary">*</span>
                 </label>
                 <input
@@ -193,15 +199,15 @@ export default function KontaktPage() {
                   required
                   value={formData.agentType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-base min-h-[48px]"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-base min-h-[48px]"
                   placeholder="z.B. Terminbuchung, Kundenservice, Beratung..."
                 />
               </div>
 
               {/* Nachricht */}
               <div>
-                <label htmlFor="nachricht" className="block text-sm font-semibold text-fg mb-2">
-                  Ihre Nachricht <span className="text-fg/40 font-normal">(optional)</span>
+                <label htmlFor="nachricht" className="block text-sm font-semibold text-gray-800 mb-2">
+                  Ihre Nachricht <span className="text-gray-500 font-normal">(optional)</span>
                 </label>
                 <textarea
                   id="nachricht"
@@ -209,7 +215,7 @@ export default function KontaktPage() {
                   rows={4}
                   value={formData.nachricht}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-4 bg-white/[0.03] border border-white/[0.08] rounded-lg text-fg placeholder:text-fg/40 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-base"
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none resize-none text-base"
                   placeholder="Beschreiben Sie kurz Ihre Anforderungen oder Fragen..."
                 />
               </div>
@@ -242,7 +248,7 @@ export default function KontaktPage() {
                 )}
               </button>
 
-              <p className="text-xs text-fg/40 text-center">
+              <p className="text-xs text-gray-500 text-center">
                 Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zu.
               </p>
             </form>

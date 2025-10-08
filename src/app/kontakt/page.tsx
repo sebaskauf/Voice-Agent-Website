@@ -116,7 +116,7 @@ export default function KontaktPage() {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="name" className="block text-base font-bold text-white mb-2">
                   Name <span className="text-primary">*</span>
                 </label>
                 <input
@@ -133,7 +133,7 @@ export default function KontaktPage() {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="email" className="block text-base font-bold text-white mb-2">
                   E-Mail <span className="text-primary">*</span>
                 </label>
                 <input
@@ -150,7 +150,7 @@ export default function KontaktPage() {
 
               {/* Praxis (optional) */}
               <div>
-                <label htmlFor="praxis" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="praxis" className="block text-base font-bold text-white mb-2">
                   Praxis / Unternehmen <span className="text-white/60 font-normal">(optional)</span>
                 </label>
                 <input
@@ -166,7 +166,7 @@ export default function KontaktPage() {
 
               {/* Ort */}
               <div>
-                <label htmlFor="ort" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="ort" className="block text-base font-bold text-white mb-2">
                   Ort <span className="text-primary">*</span>
                 </label>
                 <input
@@ -183,7 +183,7 @@ export default function KontaktPage() {
 
               {/* Art des KI-Agenten */}
               <div>
-                <label htmlFor="agentType" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="agentType" className="block text-base font-bold text-white mb-2">
                   Art des KI-Agenten <span className="text-primary">*</span>
                 </label>
                 <input
@@ -200,7 +200,7 @@ export default function KontaktPage() {
 
               {/* Nachricht */}
               <div>
-                <label htmlFor="nachricht" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="nachricht" className="block text-base font-bold text-white mb-2">
                   Ihre Nachricht <span className="text-white/60 font-normal">(optional)</span>
                 </label>
                 <textarea

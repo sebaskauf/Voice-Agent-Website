@@ -62,7 +62,7 @@ export default function Home() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <div className="block sm:inline">
                   <span className="text-white">Optimieren Sie </span>
-                  <span className="inline-block sm:ml-2">
+                  <span className="inline-block sm:ml-3 md:ml-4">
                     <RotatingText />
                   </span>
                 </div>

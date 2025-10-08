@@ -27,9 +27,9 @@ export default function WaveBackground() {
           </linearGradient>
         </defs>
 
-        {/* Wave 1 - Bottom large wave - pushed down */}
+        {/* Wave 1 - Bottom wave - smaller and wavier */}
         <path
-          d="M0,550 Q360,450 720,550 T1440,550 L1440,800 L0,800 Z"
+          d="M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-slow"
         >
@@ -38,16 +38,16 @@ export default function WaveBackground() {
             dur="20s"
             repeatCount="indefinite"
             values="
-              M0,550 Q360,450 720,550 T1440,550 L1440,800 L0,800 Z;
-              M0,550 Q360,650 720,550 T1440,550 L1440,800 L0,800 Z;
-              M0,550 Q360,450 720,550 T1440,550 L1440,800 L0,800 Z
+              M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z;
+              M0,580 Q240,620 480,580 Q720,540 960,580 Q1200,620 1440,580 L1440,800 L0,800 Z;
+              M0,580 Q240,540 480,580 Q720,620 960,580 Q1200,540 1440,580 L1440,800 L0,800 Z
             "
           />
         </path>
 
-        {/* Wave 2 - Top wave - medium size */}
+        {/* Wave 2 - Top wave - smaller and wavier */}
         <path
-          d="M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z"
+          d="M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-fast"
         >
@@ -56,16 +56,16 @@ export default function WaveBackground() {
             dur="18s"
             repeatCount="indefinite"
             values="
-              M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z;
-              M0,180 Q360,220 720,180 T1440,180 L1440,0 L0,0 Z;
-              M0,180 Q360,140 720,180 T1440,180 L1440,0 L0,0 Z
+              M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z;
+              M0,160 Q240,180 480,160 Q720,140 960,160 Q1200,180 1440,160 L1440,0 L0,0 Z;
+              M0,160 Q240,140 480,160 Q720,180 960,160 Q1200,140 1440,160 L1440,0 L0,0 Z
             "
           />
         </path>
 
-        {/* Wave 3 - Small top wave for smooth transition */}
+        {/* Wave 3 - Small top wave - wavier */}
         <path
-          d="M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z"
+          d="M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z"
           fill="url(#waveGradient2)"
           className="animate-wave-medium"
         >
@@ -74,16 +74,16 @@ export default function WaveBackground() {
             dur="16s"
             repeatCount="indefinite"
             values="
-              M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z;
-              M0,110 Q360,90 720,110 T1440,110 L1440,0 L0,0 Z;
-              M0,110 Q360,130 720,110 T1440,110 L1440,0 L0,0 Z
+              M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z;
+              M0,100 Q240,110 480,100 Q720,90 960,100 Q1200,110 1440,100 L1440,0 L0,0 Z;
+              M0,100 Q240,90 480,100 Q720,110 960,100 Q1200,90 1440,100 L1440,0 L0,0 Z
             "
           />
         </path>
 
-        {/* Wave 4 - Extra bottom wave for depth - pushed down */}
+        {/* Wave 4 - Bottom wave for depth - smaller and wavier */}
         <path
-          d="M0,670 Q360,770 720,670 T1440,670 L1440,800 L0,800 Z"
+          d="M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z"
           fill="url(#waveGradient3)"
           className="animate-wave-slow"
         >
@@ -92,9 +92,9 @@ export default function WaveBackground() {
             dur="22s"
             repeatCount="indefinite"
             values="
-              M0,670 Q360,770 720,670 T1440,670 L1440,800 L0,800 Z;
-              M0,670 Q360,570 720,670 T1440,670 L1440,800 L0,800 Z;
-              M0,670 Q360,770 720,670 T1440,670 L1440,800 L0,800 Z
+              M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z;
+              M0,680 Q240,710 480,680 Q720,650 960,680 Q1200,710 1440,680 L1440,800 L0,800 Z;
+              M0,680 Q240,650 480,680 Q720,710 960,680 Q1200,650 1440,680 L1440,800 L0,800 Z
             "
           />
         </path>

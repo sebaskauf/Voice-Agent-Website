@@ -1,103 +1,281 @@
-import Image from "next/image";
+'use client';
+
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import RotatingText from '@/components/RotatingText';
+import VoiceAgentDemo from '@/components/VoiceAgentDemo';
+import DashboardSection from '@/components/DashboardSection';
+import WaveBackground from '@/components/WaveBackground';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useState, useMemo } from 'react';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { ref: kontaktRef, isVisible: kontaktVisible } = useScrollAnimation();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const particles = useMemo(() =>
+    Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      width: 2 + (i * 0.3) % 6,
+      height: 2 + (i * 0.4) % 6,
+      left: (i * 5.3) % 100,
+      top: (i * 7.1) % 100,
+      delay: (i * 0.25) % 5,
+      duration: 10 + (i * 0.5) % 10,
+    }))
+  , []);
+
+  return (
+    <>
+      <Navbar />
+
+      <main>
+        <section id="home" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-32 pb-32">
+          {/* Wave background */}
+          <WaveBackground />
+
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 animate-gradient"></div>
+
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((particle) => (
+              <div
+                key={particle.id}
+                className="absolute rounded-full bg-primary/10 animate-float"
+                style={{
+                  width: `${particle.width}px`,
+                  height: `${particle.height}px`,
+                  left: `${particle.left}%`,
+                  top: `${particle.top}%`,
+                  animationDelay: `${particle.delay}s`,
+                  animationDuration: `${particle.duration}s`,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-8 sm:mt-12 px-4">
+            <div className="animate-fadeIn">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+                <div>
+                  <span className="text-white">Optimieren Sie </span>
+                  <span className="inline-block ml-2">
+                    <RotatingText />
+                  </span>
+                </div>
+                <div className="text-white">
+                  mit intelligenten{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10">Voice-Agenten</span>
+                    <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                      <path d="M0 8 Q75 4 150 6 Q225 8 300 6" stroke="url(#paint0_linear_underline)" strokeWidth="5" strokeLinecap="round" fill="none"/>
+                      <defs>
+                        <linearGradient id="paint0_linear_underline" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#38FAFF"/>
+                          <stop offset="0.5" stopColor="#0EA5E9"/>
+                          <stop offset="1" stopColor="#38FAFF"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </span>
+                </div>
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200">
+                Automatisieren Sie Patientenanfragen und Terminbuchungen für Ihre Arztpraxis – 24/7, DSGVO-konform, messbar
+              </p>
+
+              {/* Trust Elements */}
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 animate-fadeIn animation-delay-300">
+                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
+                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <span className="text-sm sm:text-base text-white font-medium">DSGVO-konform</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
+                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                  <span className="text-sm sm:text-base text-white font-medium">Deutsch & Mehrsprachig</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-4 py-2">
+                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="text-sm sm:text-base text-white font-medium">Integration in 48h</span>
+                </div>
+              </div>
+
+              <a
+                href="/kontakt"
+                className="group inline-block bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
+              >
+                <span className="relative z-10">Jetzt starten</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <VoiceAgentDemo />
+
+        <DashboardSection />
+
+        <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          {/* Smooth gradient transition from previous section */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
+
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
+
+          {/* Smooth gradient transition to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
+
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((particle) => (
+              <div
+                key={`features-${particle.id}`}
+                className="absolute rounded-full bg-primary/10 animate-float"
+                style={{
+                  width: `${particle.width}px`,
+                  height: `${particle.height}px`,
+                  left: `${particle.left}%`,
+                  top: `${particle.top}%`,
+                  animationDelay: `${particle.delay}s`,
+                  animationDuration: `${particle.duration}s`,
+                }}
+              />
+            ))}
+          </div>
+
+          <div
+            ref={featuresRef as React.RefObject<HTMLDivElement>}
+            className={`max-w-7xl mx-auto relative z-10 scroll-animate ${featuresVisible ? 'scroll-animate-visible' : ''}`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-center mb-12 text-fg">
+              Unsere <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Features</span>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "M13 10V3L4 14h7v7l9-11h-7z",
+                  title: "Schnelle Integration",
+                  description: "Nahtlose Integration in Ihre bestehenden Systeme und Workflows innerhalb weniger Tage",
+                  color: "from-primary to-accent"
+                },
+                {
+                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                  title: "Höchste Sicherheit",
+                  description: "Datenschutzkonform und DSGVO-compliant mit modernsten Sicherheitsstandards",
+                  color: "from-accent to-primary"
+                },
+                {
+                  icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z",
+                  title: "Skalierbare Lösungen",
+                  description: "Von Start-up bis Konzern - unsere KI-Lösungen wachsen mit Ihren Anforderungen",
+                  color: "from-primary via-accent to-primary"
+                }
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  onMouseEnter={() => setHoveredFeature(index)}
+                  onMouseLeave={() => setHoveredFeature(null)}
+                  className="relative group cursor-pointer"
+                >
+                  {/* Animated gradient border */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-15 blur-xl transition-all duration-700 ease-out group-hover:blur-2xl`}></div>
+
+                  <div className={`relative bg-white/[0.02] backdrop-blur-sm p-10 rounded-2xl border transition-all duration-500 ease-out h-full ${
+                    hoveredFeature === index
+                      ? 'border-primary/40 bg-white/[0.06] transform -translate-y-1 shadow-2xl shadow-primary/20'
+                      : 'border-white/[0.05] hover:border-primary/20'
+                  }`}>
+                    <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ease-out relative overflow-hidden ${
+                      hoveredFeature === index ? 'scale-105' : ''
+                    }`}>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                      <svg className={`w-8 h-8 relative z-10 transition-all duration-500 ease-out ${
+                        hoveredFeature === index ? 'text-accent scale-105' : 'text-primary'
+                      }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
+                      </svg>
+                    </div>
+                    <h3 className={`font-display text-2xl font-semibold mb-4 transition-colors duration-500 ${
+                      hoveredFeature === index ? 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent' : 'text-fg'
+                    }`}>
+                      {feature.title}
+                    </h3>
+                    <p className={`leading-relaxed transition-colors duration-500 ${
+                      hoveredFeature === index ? 'text-fg/80' : 'text-fg/60'
+                    }`}>
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="kontakt" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          {/* Smooth gradient transition from previous section */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
+
+          {/* Background gradient effect */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((particle) => (
+              <div
+                key={`kontakt-${particle.id}`}
+                className="absolute rounded-full bg-accent/10 animate-float"
+                style={{
+                  width: `${particle.width}px`,
+                  height: `${particle.height}px`,
+                  left: `${particle.left}%`,
+                  top: `${particle.top}%`,
+                  animationDelay: `${particle.delay}s`,
+                  animationDuration: `${particle.duration}s`,
+                }}
+              />
+            ))}
+          </div>
+
+          <div
+            ref={kontaktRef as React.RefObject<HTMLDivElement>}
+            className={`max-w-4xl mx-auto text-center relative z-10 scroll-animate ${kontaktVisible ? 'scroll-animate-visible' : ''}`}
           >
-            Read our docs
-          </a>
-        </div>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6 text-fg">
+              Bereit für die{' '}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto]">
+                Transformation?
+              </span>
+            </h2>
+            <p className="text-xl text-fg/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Lassen Sie uns gemeinsam herausfinden, wie KI Ihr Unternehmen voranbringen kann
+            </p>
+            <a
+              href="/kontakt"
+              className="group inline-block relative bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-10 py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-lg shadow-lg shadow-primary/20 overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Termin vereinbaren
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </a>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+      <Footer />
+    </>
   );
 }

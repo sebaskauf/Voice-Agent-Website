@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import RotatingText from '@/components/RotatingText';
@@ -108,13 +109,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <a
+              <Link
                 href="/#voice-demo"
                 className="group inline-block bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
               >
                 <span className="relative z-10">Kostenlos testen</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

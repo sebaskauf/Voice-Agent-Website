@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [showFeaturesDropdown, setShowFeaturesDropdown] = useState(false);
 
   const features = [
@@ -45,16 +44,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-1">
             <Link
               href="/#home"
-              onMouseEnter={() => setHoveredLink('home')}
-              onMouseLeave={() => setHoveredLink(null)}
               className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Home
             </Link>
             <Link
               href="/#dashboard"
-              onMouseEnter={() => setHoveredLink('dashboard')}
-              onMouseLeave={() => setHoveredLink(null)}
               className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Dashboard

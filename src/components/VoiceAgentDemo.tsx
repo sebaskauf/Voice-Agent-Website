@@ -78,7 +78,7 @@ export default function VoiceAgentDemo() {
   return (
     <section id="voice-demo" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-48 pb-28 bg-bgDark">
       {/* Inverted wave at top - matches hero section wave colors */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden pointer-events-none opacity-40 h-32">
+      <div className="absolute top-0 left-0 right-0 overflow-hidden pointer-events-none opacity-70 h-40">
         <svg
           className="absolute w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
@@ -87,18 +87,24 @@ export default function VoiceAgentDemo() {
         >
           <defs>
             <linearGradient id="waveGradientTop1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#38FAFF" stopOpacity="0.05" />
-              <stop offset="50%" stopColor="#0EA5E9" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#38FAFF" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#2196F3" stopOpacity="0.20" />
+              <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#2196F3" stopOpacity="0.20" />
             </linearGradient>
             <linearGradient id="waveGradientTop2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0EA5E9" stopOpacity="0.05" />
-              <stop offset="50%" stopColor="#38FAFF" stopOpacity="0.12" />
-              <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#4CAF50" stopOpacity="0.15" />
+              <stop offset="50%" stopColor="#2196F3" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="#4CAF50" stopOpacity="0.15" />
+            </linearGradient>
+            <linearGradient id="waveGradientTop3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#2196F3" stopOpacity="0.12" />
+              <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#2196F3" stopOpacity="0.12" />
             </linearGradient>
           </defs>
+          {/* Main wave - larger */}
           <path
-            d="M0,0 L0,160 Q360,100 720,160 T1440,160 L1440,0 Z"
+            d="M0,0 L0,180 Q360,120 720,180 T1440,180 L1440,0 Z"
             fill="url(#waveGradientTop1)"
           >
             <animate
@@ -106,14 +112,15 @@ export default function VoiceAgentDemo() {
               dur="20s"
               repeatCount="indefinite"
               values="
-                M0,0 L0,160 Q360,100 720,160 T1440,160 L1440,0 Z;
-                M0,0 L0,160 Q360,200 720,160 T1440,160 L1440,0 Z;
-                M0,0 L0,160 Q360,100 720,160 T1440,160 L1440,0 Z
+                M0,0 L0,180 Q360,120 720,180 T1440,180 L1440,0 Z;
+                M0,0 L0,180 Q360,220 720,180 T1440,180 L1440,0 Z;
+                M0,0 L0,180 Q360,120 720,180 T1440,180 L1440,0 Z
               "
             />
           </path>
+          {/* Secondary wave - medium */}
           <path
-            d="M0,0 L0,120 Q360,180 720,120 T1440,120 L1440,0 Z"
+            d="M0,0 L0,140 Q360,200 720,140 T1440,140 L1440,0 Z"
             fill="url(#waveGradientTop2)"
           >
             <animate
@@ -121,9 +128,25 @@ export default function VoiceAgentDemo() {
               dur="15s"
               repeatCount="indefinite"
               values="
-                M0,0 L0,120 Q360,180 720,120 T1440,120 L1440,0 Z;
-                M0,0 L0,120 Q360,60 720,120 T1440,120 L1440,0 Z;
-                M0,0 L0,120 Q360,180 720,120 T1440,120 L1440,0 Z
+                M0,0 L0,140 Q360,200 720,140 T1440,140 L1440,0 Z;
+                M0,0 L0,140 Q360,80 720,140 T1440,140 L1440,0 Z;
+                M0,0 L0,140 Q360,200 720,140 T1440,140 L1440,0 Z
+              "
+            />
+          </path>
+          {/* Third wave - smaller, smoother transition */}
+          <path
+            d="M0,0 L0,80 Q360,120 720,80 T1440,80 L1440,0 Z"
+            fill="url(#waveGradientTop3)"
+          >
+            <animate
+              attributeName="d"
+              dur="18s"
+              repeatCount="indefinite"
+              values="
+                M0,0 L0,80 Q360,120 720,80 T1440,80 L1440,0 Z;
+                M0,0 L0,80 Q360,40 720,80 T1440,80 L1440,0 Z;
+                M0,0 L0,80 Q360,120 720,80 T1440,80 L1440,0 Z
               "
             />
           </path>

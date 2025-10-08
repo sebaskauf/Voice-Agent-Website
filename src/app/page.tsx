@@ -16,7 +16,7 @@ export default function Home() {
   const { ref: kontaktRef, isVisible: kontaktVisible } = useScrollAnimation();
 
   const particles = useMemo(() =>
-    Array.from({ length: 20 }, (_, i) => ({
+    Array.from({ length: 8 }, (_, i) => ({  // Reduced from 20 to 8 for cleaner healthcare look
       id: i,
       width: 2 + (i * 0.3) % 6,
       height: 2 + (i * 0.4) % 6,
@@ -36,15 +36,15 @@ export default function Home() {
           {/* Wave background */}
           <WaveBackground />
 
-          {/* Animated background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 animate-gradient"></div>
+          {/* Subtle background gradient - Healthcare theme */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
 
-          {/* Floating particles */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Minimal floating particles for professional look */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
             {particles.map((particle) => (
               <div
                 key={particle.id}
-                className="absolute rounded-full bg-primary/10 animate-float"
+                className="absolute rounded-full bg-primary/20 animate-float"
                 style={{
                   width: `${particle.width}px`,
                   height: `${particle.height}px`,
@@ -61,12 +61,12 @@ export default function Home() {
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <div className="block sm:inline">
-                  <span className="text-white">Optimieren Sie </span>
+                  <span className="text-fg">Optimieren Sie </span>
                   <span className="inline-block sm:ml-3 md:ml-4">
                     <RotatingText />
                   </span>
                 </div>
-                <div className="text-white block">
+                <div className="text-fg block">
                   <span className="block sm:inline">mit intelligenten</span>{' '}
                   <span className="relative inline-block">
                     <span className="relative z-10">Voice-Agenten</span>
@@ -83,7 +83,7 @@ export default function Home() {
                   </span>
                 </div>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textSecondary mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
                 <span className="block sm:inline">Automatisieren Sie Patientenanfragen</span>{' '}
                 <span className="block sm:inline">und Terminbuchungen für Ihre Arztpraxis</span>{' '}
                 <span className="block sm:inline">– 24/7, DSGVO-konform, messbar</span>
@@ -91,29 +91,29 @@ export default function Home() {
 
               {/* Trust Elements - Interactive */}
               <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 md:gap-6 mb-6 sm:mb-8 md:mb-10 animate-fadeIn animation-delay-300 max-w-2xl mx-auto">
-                <div className="group flex items-center gap-1 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">DSGVO</span>
+                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">DSGVO</span>
                 </div>
-                <div className="group flex items-center gap-1 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Mehrsprachig</span>
+                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Mehrsprachig</span>
                 </div>
-                <div className="group flex items-center gap-1 sm:gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/[0.08] hover:border-primary/30 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-green-400 group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-white font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Setup 48h</span>
+                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Setup 48h</span>
                 </div>
               </div>
 
               <Link
                 href="/#voice-demo"
-                className="group inline-block bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
+                className="group inline-block bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
               >
                 <span className="relative z-10">Kostenlos testen</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -126,15 +126,9 @@ export default function Home() {
 
         <DashboardSection />
 
-        <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          {/* Smooth gradient transition from previous section */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
-
-          {/* Animated background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
-
-          {/* Smooth gradient transition to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
+        <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-bgDark2">
+          {/* Subtle background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
 
           {/* Floating particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -192,10 +186,10 @@ export default function Home() {
                   {/* Animated gradient border */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-15 blur-xl transition-all duration-700 ease-out group-hover:blur-2xl`}></div>
 
-                  <div className={`relative bg-white/[0.02] backdrop-blur-sm p-10 rounded-2xl border transition-all duration-500 ease-out h-full ${
+                  <div className={`relative bg-white backdrop-blur-sm p-10 rounded-2xl border transition-all duration-500 ease-out h-full ${
                     hoveredFeature === index
-                      ? 'border-primary/40 bg-white/[0.06] transform -translate-y-1 shadow-2xl shadow-primary/20'
-                      : 'border-white/[0.05] hover:border-primary/20'
+                      ? 'border-primary/40 bg-white shadow-2xl shadow-primary/20 transform -translate-y-1'
+                      : 'border-borderLight hover:border-primary/30'
                   }`}>
                     <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ease-out relative overflow-hidden ${
                       hoveredFeature === index ? 'scale-105' : ''
@@ -224,12 +218,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="kontakt" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          {/* Smooth gradient transition from previous section */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
-
-          {/* Background gradient effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+        <section id="kontakt" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-bgDark">
+          {/* Subtle background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent"></div>
 
           {/* Floating particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -264,7 +255,7 @@ export default function Home() {
             </p>
             <a
               href="/kontakt"
-              className="group inline-block relative bg-gradient-to-r from-primary to-accent text-bgDark font-sora font-semibold px-10 py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-lg shadow-lg shadow-primary/20 overflow-hidden"
+              className="group inline-block relative bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-10 py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-lg shadow-lg shadow-primary/20 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Termin vereinbaren

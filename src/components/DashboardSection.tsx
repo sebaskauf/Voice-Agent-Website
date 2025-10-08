@@ -208,15 +208,9 @@ export default function DashboardSection() {
   };
 
   return (
-    <section id="dashboard" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Smooth gradient transition from previous section */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
-
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-
-      {/* Smooth gradient transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bgDark/80 via-bgDark/40 to-transparent pointer-events-none"></div>
+    <section id="dashboard" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-bgDark2">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent"></div>
 
       <div
         ref={ref as React.RefObject<HTMLDivElement>}

@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-bgDark/95 border-b border-white/[0.06]">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-bgDark/98 border-b border-borderLight shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo with 3/4 cut-out O */}
@@ -44,13 +44,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-1">
             <Link
               href="/#home"
-              className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
+              className="text-fg/80 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Home
             </Link>
             <Link
               href="/#dashboard"
-              className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
+              className="text-fg/80 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px]"
             >
               Dashboard
             </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
               onMouseLeave={() => setShowFeaturesDropdown(false)}
             >
               <button
-                className="text-white/80 hover:text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px] flex items-center gap-1"
+                className="text-fg/80 hover:text-fg font-medium px-4 py-2 rounded-md transition-colors duration-200 text-[15px] flex items-center gap-1"
               >
                 Features
                 <svg
@@ -80,12 +80,12 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 pt-2 -ml-4">
                   {/* Invisible bridge to prevent gap */}
                   <div className="h-2 w-full"></div>
-                  <div className="w-64 bg-gradient-to-b from-[#0A1628] to-[#0D1B2F] border border-primary/20 rounded-lg shadow-2xl shadow-primary/10 overflow-hidden animate-fadeIn">
+                  <div className="w-64 bg-white border border-borderLight rounded-lg shadow-2xl shadow-primary/10 overflow-hidden animate-fadeIn">
                     {features.map((feature, index) => (
                       <Link
                         key={index}
                         href={feature.href}
-                        className="block px-4 py-3 text-white/80 hover:text-white hover:bg-primary/10 transition-all duration-200 border-b border-white/5 last:border-b-0"
+                        className="block px-4 py-3 text-fg/80 hover:text-fg hover:bg-primary/10 transition-all duration-200 border-b border-borderLight last:border-b-0"
                         onClick={() => setShowFeaturesDropdown(false)}
                       >
                         <span className="text-[15px] font-medium">{feature.name}</span>
@@ -112,7 +112,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-md p-2 transition-colors duration-200"
+              className="text-fg/80 hover:text-fg focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-md p-2 transition-colors duration-200"
               aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={isOpen}
             >
@@ -144,37 +144,37 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 pt-2 border-t border-white/[0.06] mt-2 animate-fadeIn">
+          <div className="md:hidden pb-4 pt-2 border-t border-borderLight mt-2 animate-fadeIn">
             <div className="flex flex-col space-y-1">
               <Link
                 href="/#home"
-                className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                className="text-fg/80 hover:text-fg hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/#dashboard"
-                className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                className="text-fg/80 hover:text-fg hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Dashboard
               </Link>
 
               {/* Mobile Features Section */}
-              <div className="text-white/60 text-xs font-semibold px-4 pt-2 pb-1">FEATURES</div>
+              <div className="text-textSecondary text-xs font-semibold px-4 pt-2 pb-1">FEATURES</div>
               {features.map((feature, index) => (
                 <Link
                   key={index}
                   href={feature.href}
-                  className="text-white/80 hover:text-white hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
+                  className="text-fg/80 hover:text-fg hover:bg-primary/10 font-medium rounded-md px-4 py-2.5 transition-all duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {feature.name}
                 </Link>
               ))}
 
-              <div className="h-px bg-white/[0.06] my-2"></div>
+              <div className="h-px bg-borderLight my-2"></div>
               <Link
                 href="/kontakt"
                 className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-medium rounded-md px-4 py-2.5 transition-all duration-200 text-center shadow-lg shadow-primary/20"

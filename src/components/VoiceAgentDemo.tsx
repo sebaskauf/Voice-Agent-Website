@@ -76,7 +76,7 @@ export default function VoiceAgentDemo() {
   };
 
   return (
-    <section id="voice-demo" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-48 pb-28">
+    <section id="voice-demo" className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-48 pb-28 bg-bgDark">
       {/* Inverted wave at top - matches hero section wave colors */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden pointer-events-none opacity-40 h-32">
         <svg
@@ -159,19 +159,19 @@ export default function VoiceAgentDemo() {
         className={`max-w-6xl mx-auto relative z-10 scroll-animate ${isVisible ? 'scroll-animate-visible' : ''}`}
       >
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white leading-tight px-2">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-fg leading-tight px-2">
             Erleben Sie{' '}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               KI in Aktion
             </span>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-textSecondary max-w-3xl mx-auto leading-relaxed px-4">
             Sprechen Sie mit Marie, unserem KI-Voice-Agenten
           </p>
         </div>
 
         {/* Dashboard-style Agent Card */}
-        <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/[0.08] p-4 sm:p-6 md:p-8 shadow-2xl max-w-2xl mx-auto">
+        <div className="bg-white backdrop-blur-xl rounded-2xl border border-borderLight p-4 sm:p-6 md:p-8 shadow-2xl max-w-2xl mx-auto">
           <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
             {/* Agent Avatar */}
             <div className="relative flex-shrink-0">
@@ -205,16 +205,16 @@ export default function VoiceAgentDemo() {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
-            <div className="group bg-white/[0.03] rounded-lg p-2 sm:p-3 md:p-4 border border-white/[0.05] hover:border-primary/40 hover:bg-white/[0.06] transition-all duration-300 cursor-default">
-              <div className="text-fg/60 text-xs sm:text-sm mb-1 group-hover:text-fg/80 transition-colors">Sprachen</div>
+            <div className="group bg-primary/5 rounded-lg p-2 sm:p-3 md:p-4 border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-default">
+              <div className="text-textSecondary text-xs sm:text-sm mb-1 group-hover:text-fg transition-colors">Sprachen</div>
               <div className="text-fg font-semibold text-sm sm:text-base md:text-lg group-hover:text-primary transition-colors">DE, EN</div>
             </div>
-            <div className="group bg-white/[0.03] rounded-lg p-2 sm:p-3 md:p-4 border border-white/[0.05] hover:border-primary/40 hover:bg-white/[0.06] transition-all duration-300 cursor-default">
-              <div className="text-fg/60 text-xs sm:text-sm mb-1 group-hover:text-fg/80 transition-colors">Reaktionszeit</div>
+            <div className="group bg-primary/5 rounded-lg p-2 sm:p-3 md:p-4 border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-default">
+              <div className="text-textSecondary text-xs sm:text-sm mb-1 group-hover:text-fg transition-colors">Reaktionszeit</div>
               <div className="text-fg font-semibold text-sm sm:text-base md:text-lg group-hover:text-primary transition-colors">&lt;500ms</div>
             </div>
-            <div className="group bg-white/[0.03] rounded-lg p-2 sm:p-3 md:p-4 border border-white/[0.05] hover:border-primary/40 hover:bg-white/[0.06] transition-all duration-300 cursor-default">
-              <div className="text-fg/60 text-xs sm:text-sm mb-1 group-hover:text-fg/80 transition-colors">Verfügbarkeit</div>
+            <div className="group bg-primary/5 rounded-lg p-2 sm:p-3 md:p-4 border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-default">
+              <div className="text-textSecondary text-xs sm:text-sm mb-1 group-hover:text-fg transition-colors">Verfügbarkeit</div>
               <div className="text-fg font-semibold text-sm sm:text-base md:text-lg group-hover:text-primary transition-colors">24/7</div>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function VoiceAgentDemo() {
           </button>
 
           {/* Info Text */}
-          <p className="text-xs text-fg/40 text-center mt-4">
+          <p className="text-xs text-textSecondary text-center mt-4">
             Kostenloser Demo-Anruf • Keine Anmeldung erforderlich
           </p>
         </div>

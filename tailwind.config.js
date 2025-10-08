@@ -4,11 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgDark: "#0B1020",
-        bgDark2: "#0E1530",
-        fg: "#FFFFFF",
-        primary: "#38FAFF",
-        accent: "#0EA5E9"
+        // Healthcare-optimized color scheme
+        bgDark: "#FFFFFF",        // Light background for trust
+        bgDark2: "#F8F9FA",       // Subtle gray for sections
+        fg: "#1A2332",            // Dark text for readability
+        primary: "#2196F3",       // Medical blue (trustworthy)
+        accent: "#4CAF50",        // Health green (positive)
+        // Legacy support (gradually phase out)
+        textSecondary: "#546E7A", // Muted text
+        borderLight: "#E0E0E0"    // Subtle borders
       },
       fontFamily: {
         sans: ['var(--font-garamond)', 'Georgia', 'serif'],

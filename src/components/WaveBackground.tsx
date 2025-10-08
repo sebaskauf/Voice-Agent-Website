@@ -45,9 +45,9 @@ export default function WaveBackground() {
           />
         </path>
 
-        {/* Wave 2 - Top large wave */}
+        {/* Wave 2 - Top wave - smaller (pushed up) */}
         <path
-          d="M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z"
+          d="M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z"
           fill="url(#waveGradient1)"
           className="animate-wave-fast"
         >
@@ -56,9 +56,27 @@ export default function WaveBackground() {
             dur="18s"
             repeatCount="indefinite"
             values="
-              M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z;
-              M0,200 Q360,250 720,200 T1440,200 L1440,0 L0,0 Z;
-              M0,200 Q360,150 720,200 T1440,200 L1440,0 L0,0 Z
+              M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z;
+              M0,120 Q360,150 720,120 T1440,120 L1440,0 L0,0 Z;
+              M0,120 Q360,90 720,120 T1440,120 L1440,0 L0,0 Z
+            "
+          />
+        </path>
+
+        {/* Wave 3 - Extra small top wave for smooth transition */}
+        <path
+          d="M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z"
+          fill="url(#waveGradient2)"
+          className="animate-wave-medium"
+        >
+          <animate
+            attributeName="d"
+            dur="16s"
+            repeatCount="indefinite"
+            values="
+              M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z;
+              M0,60 Q360,40 720,60 T1440,60 L1440,0 L0,0 Z;
+              M0,60 Q360,80 720,60 T1440,60 L1440,0 L0,0 Z
             "
           />
         </path>

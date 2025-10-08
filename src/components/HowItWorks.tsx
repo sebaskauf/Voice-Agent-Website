@@ -8,21 +8,21 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "1",
-      title: "Praxis geschlossen",
-      description: "19 Uhr, Feierabend. Patient ruft an – niemand geht ran.",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-    },
-    {
-      number: "2",
-      title: "KI antwortet sofort",
-      description: "Unser Voice-Agent nimmt ab, beantwortet Fragen, vereinbart Termine – wie Ihre MFA, nur 24/7.",
+      title: "5 Anrufe gleichzeitig",
+      description: "Stoßzeit in Ihrer Praxis – 5 Patienten rufen gleichzeitig an. Früher: 4 hören das Besetztzeichen.",
       icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
     },
     {
+      number: "2",
+      title: "KI nimmt alle 5 Anrufe an",
+      description: "Jeder Patient wird sofort verbunden – parallel, ohne Wartezeit. Termine werden vereinbart, Fragen beantwortet.",
+      icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+    },
+    {
       number: "3",
-      title: "Termin im Kalender",
-      description: "Morgens öffnen Sie Ihre Praxissoftware: Neue Termine, sortiert, dokumentiert – ohne verpasste Anrufe.",
-      icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+      title: "Keine verpassten Anrufe mehr",
+      description: "100% Erreichbarkeit, zufriedene Patienten, voller Terminkalender. Ihr Team konzentriert sich auf die Behandlung.",
+      icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
     }
   ];
 
@@ -47,7 +47,7 @@ export default function HowItWorks() {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-textSecondary max-w-3xl mx-auto">
-            Ein typischer Abend – kein Anrufbeantworter, keine verpassten Chancen
+            Stoßzeiten meistern – jeder Anruf zählt
           </p>
         </div>
 

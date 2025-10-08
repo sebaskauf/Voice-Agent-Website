@@ -2,7 +2,7 @@
 
 export default function WaveBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-70">
       <svg
         className="absolute w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
@@ -11,19 +11,19 @@ export default function WaveBackground() {
       >
         <defs>
           <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.05" />
-            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.12" />
+            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.12" />
           </linearGradient>
           <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#4CAF50" stopOpacity="0.05" />
-            <stop offset="50%" stopColor="#2196F3" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#4CAF50" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#4CAF50" stopOpacity="0.12" />
+            <stop offset="50%" stopColor="#2196F3" stopOpacity="0.20" />
+            <stop offset="100%" stopColor="#4CAF50" stopOpacity="0.12" />
           </linearGradient>
           <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.08" />
-            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.08" />
+            <stop offset="0%" stopColor="#2196F3" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="#4CAF50" stopOpacity="0.28" />
+            <stop offset="100%" stopColor="#2196F3" stopOpacity="0.15" />
           </linearGradient>
         </defs>
 

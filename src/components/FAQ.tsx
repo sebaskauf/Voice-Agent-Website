@@ -67,24 +67,40 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
+        {/* FAQ Accordion - 2 columns on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white backdrop-blur-sm rounded-xl border border-borderLight overflow-hidden hover:border-primary/30 transition-all duration-300"
+              className={`bg-white backdrop-blur-sm rounded-2xl border transition-all duration-300 overflow-hidden ${
+                openIndex === index
+                  ? 'border-primary/40 shadow-xl shadow-primary/20'
+                  : 'border-borderLight hover:border-primary/30 hover:shadow-lg'
+              }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 group"
+                className="w-full text-left px-5 py-4 flex items-start justify-between gap-3 group"
               >
-                <span className={`text-lg font-semibold transition-colors duration-300 ${
-                  openIndex === index ? 'text-primary' : 'text-fg group-hover:text-primary'
+                {/* Question number badge */}
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                  openIndex === index
+                    ? 'bg-gradient-to-br from-primary to-accent text-white shadow-lg'
+                    : 'bg-primary/10 text-primary group-hover:bg-primary/20'
                 }`}>
-                  {faq.question}
-                </span>
+                  {index + 1}
+                </div>
+
+                <div className="flex-1">
+                  <span className={`text-base sm:text-lg font-semibold transition-colors duration-300 block ${
+                    openIndex === index ? 'text-primary' : 'text-fg group-hover:text-primary'
+                  }`}>
+                    {faq.question}
+                  </span>
+                </div>
+
                 <svg
-                  className={`w-6 h-6 flex-shrink-0 transition-all duration-300 ${
+                  className={`w-5 h-5 flex-shrink-0 transition-all duration-300 ${
                     openIndex === index ? 'rotate-180 text-primary' : 'text-textSecondary group-hover:text-primary'
                   }`}
                   fill="none"
@@ -100,7 +116,7 @@ export default function FAQ() {
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-textSecondary leading-relaxed border-t border-borderLight pt-4">
+                <div className="px-5 pb-4 pl-16 text-textSecondary leading-relaxed text-sm sm:text-base">
                   {faq.answer}
                 </div>
               </div>

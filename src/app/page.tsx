@@ -63,7 +63,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                <div className="text-fg">
+                <div className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   <span className="block">Nie wieder verpasste Anrufe</span>
                   <span className="relative inline-block">
                     <span className="relative z-10">nach Feierabend</span>

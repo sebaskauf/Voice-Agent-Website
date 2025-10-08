@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const words = ['nach Feierabend', 'in Stoßzeiten', 'vor der Öffnung', 'am Wochenende'];
+const words = ['nach Feierabend', 'in Stoßzeiten', 'vor Ladenöffnung', 'am Wochenende'];
 const colors = ['from-primary via-accent to-primary', 'from-accent to-primary', 'from-primary to-accent', 'from-accent via-primary to-accent'];
 
 export default function RotatingText() {
@@ -73,8 +73,38 @@ export default function RotatingText() {
             }
           }
         `}</style>
-        <span className={`bg-gradient-to-r ${colors[index]} bg-clip-text text-transparent`}>
-          {words[index]}
+        <span className="relative inline-block">
+          <span className={`bg-gradient-to-r ${colors[index]} bg-clip-text text-transparent`}>
+            {words[index]}
+          </span>
+          <svg
+            className="absolute -bottom-1 left-0 w-full h-3"
+            viewBox="0 0 300 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            style={{
+              animationName: isExiting ? 'wordRotationExit' : 'wordRotationEnter',
+              animationDuration: '0.6s',
+              animationTimingFunction: 'ease-in-out',
+              animationFillMode: 'forwards',
+            }}
+          >
+            <path
+              d="M0 8 Q75 4 150 6 Q225 8 300 6"
+              stroke={`url(#paint0_linear_underline_${index})`}
+              strokeWidth="5"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <defs>
+              <linearGradient id={`paint0_linear_underline_${index}`} x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#2196F3"/>
+                <stop offset="0.5" stopColor="#4CAF50"/>
+                <stop offset="1" stopColor="#2196F3"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </span>
       </span>
     </span>

@@ -10,6 +10,7 @@ import HowItWorks from '@/components/HowItWorks';
 import SecuritySection from '@/components/SecuritySection';
 import FAQ from '@/components/FAQ';
 import WaveBackground from '@/components/WaveBackground';
+import ProblemSection from '@/components/ProblemSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState, useMemo } from 'react';
 
@@ -97,20 +98,22 @@ export default function Home() {
 
               <Link
                 href="/#voice-demo"
-                className="group inline-block bg-gradient-to-r from-primary to-blue-600 text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
+                className="group inline-block bg-gradient-to-r from-primary via-accent to-primary text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
               >
-                <span className="relative z-10">Kostenlose Demo vereinbaren</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10">Kostenlos ausprobieren</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Link>
             </div>
           </div>
         </section>
 
+        <ProblemSection />
+
         <VoiceAgentDemo />
 
         <HowItWorks />
 
-        <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-bgDark2">
+        <section id="features" className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-bgDark2">
           {/* Subtle background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
 
@@ -137,7 +140,7 @@ export default function Home() {
             className={`max-w-7xl mx-auto relative z-10 scroll-animate ${featuresVisible ? 'scroll-animate-visible' : ''}`}
           >
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-center mb-12 text-fg">
-              Unsere <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Features</span>
+              Unsere <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Features</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -146,19 +149,87 @@ export default function Home() {
                   icon: "M13 10V3L4 14h7v7l9-11h-7z",
                   title: "In 48 Stunden einsatzbereit",
                   description: "Ohne IT-Kenntnisse, ohne Umstellung Ihrer Telefonanlage. Sie bekommen eine Telefonnummer – fertig.",
-                  color: "from-primary to-accent"
+                  color: "from-primary to-accent",
+                  illustration: (
+                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Clock background */}
+                      <circle cx="250" cy="175" r="120" fill="#007ACC" fillOpacity="0.1" />
+                      {/* Clock */}
+                      <circle cx="250" cy="175" r="90" fill="white" stroke="#007ACC" strokeWidth="4" />
+                      <circle cx="250" cy="175" r="5" fill="#007ACC" />
+                      {/* Hour hand */}
+                      <line x1="250" y1="175" x2="250" y2="120" stroke="#007ACC" strokeWidth="6" strokeLinecap="round" />
+                      {/* Minute hand */}
+                      <line x1="250" y1="175" x2="310" y2="175" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" />
+                      {/* Phone icon */}
+                      <rect x="320" y="120" width="80" height="120" rx="12" fill="#007ACC" />
+                      <rect x="330" y="130" width="60" height="90" rx="4" fill="white" />
+                      <circle cx="360" cy="230" r="8" fill="#00D4AA" />
+                      {/* Checkmark */}
+                      <circle cx="400" cy="80" r="30" fill="#00D4AA" />
+                      <path d="M385 80L395 90L415 70" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )
                 },
                 {
                   icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
                   title: "100% DSGVO-konform",
-                  description: "Patientendaten bleiben in Deutschland. TÜV-zertifiziert, verschlüsselt, auf deutschen Servern.",
-                  color: "from-accent to-primary"
+                  description: "Patientendaten bleiben in Deutschland. Höchste Sicherheitsstandards, verschlüsselt, auf deutschen Servern.",
+                  color: "from-accent to-primary",
+                  illustration: (
+                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Server rack */}
+                      <rect x="150" y="80" width="200" height="200" rx="8" fill="#007ACC" fillOpacity="0.1" />
+                      <rect x="160" y="90" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
+                      <rect x="160" y="150" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
+                      <rect x="160" y="210" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
+                      {/* Indicator lights */}
+                      <circle cx="180" cy="115" r="5" fill="#00D4AA" />
+                      <circle cx="200" cy="115" r="5" fill="#00D4AA" />
+                      <circle cx="180" cy="175" r="5" fill="#00D4AA" />
+                      <circle cx="200" cy="175" r="5" fill="#00D4AA" />
+                      <circle cx="180" cy="235" r="5" fill="#00D4AA" />
+                      <circle cx="200" cy="235" r="5" fill="#00D4AA" />
+                      {/* Shield with lock */}
+                      <path d="M380 120 L380 180 C380 200 360 210 340 210 C320 210 300 200 300 180 L300 120 L340 100 L380 120Z" fill="#00D4AA" />
+                      <rect x="325" y="145" width="30" height="35" rx="4" fill="white" fillOpacity="0.3" />
+                      <circle cx="340" cy="155" r="6" fill="white" />
+                      <line x1="340" y1="161" x2="340" y2="172" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                      {/* Germany flag colors accent */}
+                      <rect x="370" y="240" width="60" height="12" fill="#000000" fillOpacity="0.8" />
+                      <rect x="370" y="252" width="60" height="12" fill="#DD0000" />
+                      <rect x="370" y="264" width="60" height="12" fill="#FFCE00" />
+                    </svg>
+                  )
                 },
                 {
                   icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z",
                   title: "Wächst mit Ihrer Praxis",
                   description: "Von 5 bis 500 Anrufe pro Tag – keine Mehrkosten, keine versteckten Gebühren.",
-                  color: "from-primary via-accent to-primary"
+                  color: "from-primary via-accent to-primary",
+                  illustration: (
+                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Growth chart background */}
+                      <rect x="80" y="60" width="340" height="220" rx="8" fill="#007ACC" fillOpacity="0.05" />
+                      {/* Axes */}
+                      <line x1="100" y1="260" x2="400" y2="260" stroke="#007ACC" strokeWidth="2" />
+                      <line x1="100" y1="80" x2="100" y2="260" stroke="#007ACC" strokeWidth="2" />
+                      {/* Bar chart */}
+                      <rect x="120" y="220" width="40" height="40" fill="#007ACC" fillOpacity="0.6" rx="4" />
+                      <rect x="180" y="200" width="40" height="60" fill="#007ACC" fillOpacity="0.7" rx="4" />
+                      <rect x="240" y="160" width="40" height="100" fill="#007ACC" fillOpacity="0.8" rx="4" />
+                      <rect x="300" y="120" width="40" height="140" fill="#00D4AA" rx="4" />
+                      {/* Growth arrow */}
+                      <path d="M130 210 L200 180 L270 140 L340 100" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="130" cy="210" r="6" fill="#00D4AA" />
+                      <circle cx="200" cy="180" r="6" fill="#00D4AA" />
+                      <circle cx="270" cy="140" r="6" fill="#00D4AA" />
+                      <circle cx="340" cy="100" r="6" fill="#00D4AA" />
+                      {/* Upward arrow indicator */}
+                      <path d="M360 80 L380 60 L400 80" stroke="#00D4AA" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      <line x1="380" y1="60" x2="380" y2="120" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" />
+                    </svg>
+                  )
                 }
               ].map((feature, index) => (
                 <div
@@ -170,21 +241,16 @@ export default function Home() {
                   {/* Animated gradient border */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-15 blur-xl transition-all duration-700 ease-out group-hover:blur-2xl`}></div>
 
-                  <div className={`relative bg-white backdrop-blur-sm p-10 rounded-2xl border transition-all duration-500 ease-out h-full ${
+                  <div className={`relative bg-white backdrop-blur-sm p-8 rounded-2xl border transition-all duration-500 ease-out h-full ${
                     hoveredFeature === index
                       ? 'border-primary/40 bg-white shadow-2xl shadow-primary/20 transform -translate-y-1'
                       : 'border-borderLight hover:border-primary/30'
                   }`}>
-                    <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ease-out relative overflow-hidden ${
-                      hoveredFeature === index ? 'scale-105' : ''
-                    }`}>
-                      <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
-                      <svg className={`w-8 h-8 relative z-10 transition-all duration-500 ease-out ${
-                        hoveredFeature === index ? 'text-accent scale-105' : 'text-primary'
-                      }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
-                      </svg>
+                    {/* Illustration */}
+                    <div className="transition-transform duration-500 group-hover:scale-105">
+                      {feature.illustration}
                     </div>
+
                     <h3 className={`font-display text-2xl font-semibold mb-4 transition-colors duration-500 ${
                       hoveredFeature === index ? 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent' : 'text-fg'
                     }`}>

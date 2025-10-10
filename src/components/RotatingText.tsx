@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const words = ['nach Feierabend', 'in Stoßzeiten', 'vor Ladenöffnung', 'am Wochenende'];
+const words = ['nach Feierabend', 'in Stoßzeiten', 'vor Praxisöffnung', 'am Wochenende'];
 const colors = ['from-primary via-accent to-primary', 'from-accent to-primary', 'from-primary to-accent', 'from-accent via-primary to-accent'];
 
 export default function RotatingText() {
@@ -78,17 +78,19 @@ export default function RotatingText() {
             {words[index]}
           </span>
           <svg
-            className="absolute -bottom-1 left-0 w-full h-3"
-            viewBox="0 0 300 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
+            className="absolute left-1/2 w-full h-3"
             style={{
+              bottom: '-0.5rem',
+              transform: 'translateX(-50%)',
               animationName: isExiting ? 'wordRotationExit' : 'wordRotationEnter',
               animationDuration: '0.6s',
               animationTimingFunction: 'ease-in-out',
               animationFillMode: 'forwards',
             }}
+            viewBox="0 0 300 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
           >
             <path
               d="M0 8 Q75 4 150 6 Q225 8 300 6"

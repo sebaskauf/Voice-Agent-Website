@@ -1,9 +1,13 @@
 'use client';
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function HowItWorks() {
   const { ref, isVisible } = useScrollAnimation();
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const [animatingLines, setAnimatingLines] = useState<number[]>([]);
 
   const steps = [
     {
@@ -26,8 +30,73 @@ export default function HowItWorks() {
     }
   ];
 
+  useEffect(() => {
+    if (isVisible) {
+      const timers: NodeJS.Timeout[] = [];
+
+      // Total duration: ~2 seconds
+      // Box 1: appears immediately (0s)
+      // Line 1→2: grows from 0.2s to 0.9s (0.7s duration)
+      // Box 2: appears at 0.9s
+      // Line 2→3: grows from 1.1s to 1.8s (0.7s duration)
+      // Box 3: appears at 1.8s
+
+      // Box 1 appears immediately
+      timers.push(setTimeout(() => {
+        setVisibleSteps(prev => [...prev, 0]);
+      }, 0));
+
+      // Line 1→2 starts growing immediately after box 1
+      timers.push(setTimeout(() => {
+        setAnimatingLines(prev => [...prev, 0]);
+      }, 200));
+
+      // Box 2 appears after line 1→2 finishes
+      timers.push(setTimeout(() => {
+        setVisibleSteps(prev => [...prev, 1]);
+      }, 900));
+
+      // Line 2→3 starts growing after box 2 appears
+      timers.push(setTimeout(() => {
+        setAnimatingLines(prev => [...prev, 1]);
+      }, 1100));
+
+      // Box 3 appears after line 2→3 finishes
+      timers.push(setTimeout(() => {
+        setVisibleSteps(prev => [...prev, 2]);
+      }, 1800));
+
+      return () => {
+        timers.forEach(timer => clearTimeout(timer));
+      };
+    } else {
+      setVisibleSteps([]);
+      setAnimatingLines([]);
+    }
+  }, [isVisible]);
+
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-bgDark2 overflow-hidden">
+    <section className="relative py-16 pb-8 px-4 sm:px-6 lg:px-8 bg-bgDark2 overflow-hidden">
+      {/* Doctor Background Image - Right side - Can overflow section boundaries */}
+      <div className={`absolute -right-[400px] top-[20%] bottom-[-40%] w-[2000px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+      }`}>
+        <Image
+          src="/doctor-how-it-works.png"
+          alt="Arzt"
+          width={2000}
+          height={3000}
+          className="absolute right-0 h-full w-auto object-cover object-left opacity-70"
+          style={{
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
+            filter: 'blur(0px)',
+            transform: 'scale(1.8)',
+            transformOrigin: 'right center',
+          }}
+        />
+      </div>
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
@@ -53,24 +122,53 @@ export default function HowItWorks() {
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="relative group"
-            >
-              {/* Connector line (hidden on mobile) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-0.5 bg-gradient-to-r from-primary/30 to-accent/30 z-0">
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-accent/50 rounded-full"></div>
-                </div>
-              )}
+          {steps.map((step, index) => {
+            const isStepVisible = visibleSteps.includes(index);
+            return (
+              <div
+                key={index}
+                className="relative group"
+              >
+                {/* Connector line (hidden on mobile) - grows from left to right */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-16 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-1 z-0 overflow-hidden">
+                    <div
+                      className={`h-full bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 origin-left ${
+                        animatingLines.includes(index) ? 'w-full' : 'w-0'
+                      }`}
+                      style={{
+                        transition: 'width 0.7s cubic-bezier(0.4, 0.0, 0.2, 1)',
+                        boxShadow: animatingLines.includes(index) ? '0 0 8px rgba(33, 150, 243, 0.3)' : 'none'
+                      }}
+                    >
+                    </div>
+                  </div>
+                )}
 
-              {/* Step Card */}
-              <div className="relative bg-white backdrop-blur-sm rounded-2xl border border-borderLight p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group-hover:-translate-y-1 h-full">
+                {/* Step Card */}
+                <div
+                  className={`relative bg-white backdrop-blur-sm rounded-2xl border border-borderLight p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 transition-all group-hover:-translate-y-1 h-full ${
+                    isStepVisible
+                      ? 'opacity-100 translate-x-0 scale-100'
+                      : 'opacity-0 -translate-x-12 scale-90'
+                  }`}
+                  style={{
+                    transition: 'opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                  }}
+                >
                 {/* Step Number Badge */}
-                <div className="absolute -top-4 left-8">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
-                    <span className="text-white font-bold text-xl">{step.number}</span>
+                <div
+                  className={`absolute -top-4 left-8 transition-all ${
+                    isStepVisible
+                      ? 'opacity-100 scale-100'
+                      : 'opacity-0 scale-0'
+                  }`}
+                  style={{
+                    transition: 'opacity 0.4s ease-out 0.3s, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.3s'
+                  }}
+                >
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
+                    <span className="text-white font-bold text-2xl">{step.number}</span>
                   </div>
                 </div>
 
@@ -95,7 +193,8 @@ export default function HowItWorks() {
                 </p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA hint */}

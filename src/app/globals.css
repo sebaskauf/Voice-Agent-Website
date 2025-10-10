@@ -231,3 +231,54 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Floating image animations */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.floating-image {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Gradient fade-out at bottom */
+.floating-image-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* 3D hover tilt effect */
+.hover-tilt {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-out;
+}
+
+.hover-tilt:hover {
+  transform: rotateY(5deg) rotateX(-5deg) scale(1.02);
+}
+
+/* Add depth with multiple shadows on hover */
+.hover-tilt:hover img {
+  filter: drop-shadow(0 30px 60px rgba(0, 122, 204, 0.3)) 
+          drop-shadow(0 15px 30px rgba(0, 212, 170, 0.25))
+          drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1)) !important;
+}

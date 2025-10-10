@@ -59,7 +59,7 @@ export default function BookingCalendar() {
           />
         </svg>
         <div className="text-sm text-textSecondary">
-          <p className="font-semibold text-fg mb-1">So funktioniert's:</p>
+          <p className="font-semibold text-fg mb-1">So funktioniert&apos;s:</p>
           <ul className="space-y-1">
             <li>✓ Wählen Sie einen verfügbaren Zeitslot aus dem Kalender</li>
             <li>✓ Geben Sie Ihre Kontaktdaten ein</li>

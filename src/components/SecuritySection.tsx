@@ -1,7 +1,6 @@
 'use client';
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import Image from 'next/image';
 
 export default function SecuritySection() {
   const { ref, isVisible } = useScrollAnimation();

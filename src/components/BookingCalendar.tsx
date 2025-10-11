@@ -1,9 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Cal, { getCalApi } from '@calcom/embed-react';
 
 export default function BookingCalendar() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile on mount
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -11,10 +25,10 @@ export default function BookingCalendar() {
         theme: 'light',
         styles: { branding: { brandColor: '#38FAFF' } },
         hideEventTypeDetails: false,
-        layout: 'month_view',
+        layout: isMobile ? 'column_view' : 'month_view',
       });
     })();
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="w-full">
@@ -32,12 +46,17 @@ export default function BookingCalendar() {
       </div>
 
       {/* Cal.com Embed */}
-      <div className="bg-white rounded-2xl border-2 border-primary/20 overflow-hidden shadow-lg">
+      <div className="bg-white rounded-2xl border-2 border-primary/20 overflow-hidden shadow-lg min-h-[600px] md:min-h-[700px]">
         <Cal
           calLink={`${process.env.NEXT_PUBLIC_CALCOM_USERNAME}/30min`}
-          style={{ width: '100%', height: '100%', overflow: 'scroll' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            minHeight: isMobile ? '600px' : '700px',
+            overflow: 'auto'
+          }}
           config={{
-            layout: 'month_view',
+            layout: isMobile ? 'column_view' : 'month_view',
             theme: 'light',
           }}
         />

@@ -139,11 +139,11 @@ export default function Home() {
             ref={featuresRef as React.RefObject<HTMLDivElement>}
             className={`max-w-7xl mx-auto relative z-10 scroll-animate ${featuresVisible ? 'scroll-animate-visible' : ''}`}
           >
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-center mb-12 text-fg">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-fg px-4">
               Unsere <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Features</span>
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   icon: "M13 10V3L4 14h7v7l9-11h-7z",
@@ -151,7 +151,7 @@ export default function Home() {
                   description: "Ohne IT-Kenntnisse, ohne Umstellung Ihrer Telefonanlage. Sie bekommen eine Telefonnummer – fertig.",
                   color: "from-primary to-accent",
                   illustration: (
-                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                       {/* Clock background */}
                       <circle cx="250" cy="175" r="120" fill="#007ACC" fillOpacity="0.1" />
                       {/* Clock */}
@@ -177,7 +177,7 @@ export default function Home() {
                   description: "Patientendaten bleiben in Deutschland. Höchste Sicherheitsstandards, verschlüsselt, auf deutschen Servern.",
                   color: "from-accent to-primary",
                   illustration: (
-                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                       {/* Server rack */}
                       <rect x="150" y="80" width="200" height="200" rx="8" fill="#007ACC" fillOpacity="0.1" />
                       <rect x="160" y="90" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
@@ -208,7 +208,7 @@ export default function Home() {
                   description: "Von 5 bis 500 Anrufe pro Tag – keine Mehrkosten, keine versteckten Gebühren.",
                   color: "from-primary via-accent to-primary",
                   illustration: (
-                    <svg className="w-full h-48 mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                       {/* Growth chart background */}
                       <rect x="80" y="60" width="340" height="220" rx="8" fill="#007ACC" fillOpacity="0.05" />
                       {/* Axes */}
@@ -241,7 +241,7 @@ export default function Home() {
                   {/* Animated gradient border */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-15 blur-xl transition-all duration-700 ease-out group-hover:blur-2xl`}></div>
 
-                  <div className={`relative bg-white backdrop-blur-sm p-8 rounded-2xl border transition-all duration-500 ease-out h-full ${
+                  <div className={`relative bg-white backdrop-blur-sm p-6 sm:p-8 rounded-2xl border transition-all duration-500 ease-out h-full ${
                     hoveredFeature === index
                       ? 'border-primary/40 bg-white shadow-2xl shadow-primary/20 transform -translate-y-1'
                       : 'border-borderLight hover:border-primary/30'
@@ -251,12 +251,12 @@ export default function Home() {
                       {feature.illustration}
                     </div>
 
-                    <h3 className={`font-display text-2xl font-semibold mb-4 transition-colors duration-500 ${
+                    <h3 className={`font-display text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 transition-colors duration-500 ${
                       hoveredFeature === index ? 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent' : 'text-fg'
                     }`}>
                       {feature.title}
                     </h3>
-                    <p className={`leading-relaxed transition-colors duration-500 ${
+                    <p className={`text-sm sm:text-base leading-relaxed transition-colors duration-500 ${
                       hoveredFeature === index ? 'text-fg/80' : 'text-fg/60'
                     }`}>
                       {feature.description}

@@ -108,14 +108,14 @@ export default function HowItWorks() {
         className={`max-w-7xl mx-auto relative z-10 scroll-animate ${isVisible ? 'scroll-animate-visible' : ''}`}
       >
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-fg">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-fg">
             So funktioniert&apos;s{' '}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               in der Praxis
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-textSecondary max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-textSecondary max-w-3xl mx-auto px-2">
             Stoßzeiten meistern – jeder Anruf zählt
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function HowItWorks() {
 
                 {/* Step Card */}
                 <div
-                  className={`relative bg-white backdrop-blur-sm rounded-2xl border border-borderLight p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 transition-all group-hover:-translate-y-1 h-full ${
+                  className={`relative bg-white backdrop-blur-sm rounded-2xl border border-borderLight p-6 sm:p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 transition-all group-hover:-translate-y-1 h-full ${
                     isStepVisible
                       ? 'opacity-100 translate-x-0 scale-100'
                       : 'opacity-0 -translate-x-12 scale-90'
@@ -158,7 +158,7 @@ export default function HowItWorks() {
                 >
                 {/* Step Number Badge */}
                 <div
-                  className={`absolute -top-4 left-8 transition-all ${
+                  className={`absolute -top-3 sm:-top-4 left-6 sm:left-8 transition-all ${
                     isStepVisible
                       ? 'opacity-100 scale-100'
                       : 'opacity-0 scale-0'
@@ -167,15 +167,15 @@ export default function HowItWorks() {
                     transition: 'opacity 0.4s ease-out 0.3s, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.3s'
                   }}
                 >
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
-                    <span className="text-white font-bold text-2xl">{step.number}</span>
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
+                    <span className="text-white font-bold text-xl sm:text-2xl">{step.number}</span>
                   </div>
                 </div>
 
                 {/* Icon */}
-                <div className="mt-6 mb-6 w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <div className="mt-4 sm:mt-6 mb-4 sm:mb-6 w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                   <svg
-                    className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-500"
+                    className="w-7 h-7 sm:w-8 sm:h-8 text-primary group-hover:text-accent transition-colors duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -185,10 +185,10 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-fg mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-fg mb-3 sm:mb-4 group-hover:text-primary transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-textSecondary leading-relaxed">
+                <p className="text-sm sm:text-base text-textSecondary leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -198,8 +198,8 @@ export default function HowItWorks() {
         </div>
 
         {/* Bottom CTA hint */}
-        <div className="text-center mt-16">
-          <p className="text-textSecondary text-lg">
+        <div className="text-center mt-12 sm:mt-16 px-4">
+          <p className="text-textSecondary text-base sm:text-lg">
             Klingt zu einfach?{' '}
             <a href="#voice-demo" className="text-primary hover:text-accent font-semibold transition-colors">
               Probieren Sie es aus

@@ -11,7 +11,7 @@ export default function SecuritySection() {
       title: "DSGVO-konform",
       description: "Vollständig DSGVO-compliant. Patientendaten werden ausschließlich in Deutschland gespeichert und verarbeitet.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
           {/* Lock */}
@@ -33,7 +33,7 @@ export default function SecuritySection() {
       title: "End-to-End Verschlüsselung",
       description: "Alle Gespräche und Daten werden mit höchster Verschlüsselung gesichert. Ihre Patientendaten sind absolut geschützt.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
 
@@ -66,7 +66,7 @@ export default function SecuritySection() {
       title: "Deutsche & EU-Standards",
       description: "Kernsystem auf deutschen Servern. Telefonie über DSGVO-konforme Partner mit EU-Standardvertragsklauseln und Auftragsverarbeitungsvertrag.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
           {/* Server stack */}
@@ -94,7 +94,7 @@ export default function SecuritySection() {
       title: "Ärztliche Schweigepflicht",
       description: "Unsere KI ist auf medizinische Vertraulichkeit trainiert. Sensible Informationen werden nie weitergegeben.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
           {/* Medical cross */}
@@ -112,7 +112,7 @@ export default function SecuritySection() {
       title: "Höchste Sicherheitsstandards",
       description: "Nach deutschen IT-Sicherheitsrichtlinien entwickelt. Regelmäßige Security-Audits.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
           {/* Award ribbon/badge */}
@@ -131,7 +131,7 @@ export default function SecuritySection() {
       title: "Regelmäßige Audits",
       description: "Kontinuierliche Sicherheitsprüfungen und Updates. Ihre Praxis ist immer auf dem neuesten Stand der Technik.",
       illustration: (
-        <svg className="w-full h-40 mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-32 sm:h-40 mb-3 sm:mb-4" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Shield background */}
           <path d="M150 30 L240 65 L240 140 C240 185 205 220 150 255 C95 220 60 185 60 140 L60 65 L150 30Z" fill="white" stroke="#1a1a1a" strokeWidth="4"/>
           {/* Magnifying glass */}
@@ -159,7 +159,7 @@ export default function SecuritySection() {
         className={`max-w-7xl mx-auto relative z-10 scroll-animate ${isVisible ? 'scroll-animate-visible' : ''}`}
       >
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16 px-4">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -167,13 +167,13 @@ export default function SecuritySection() {
             Sicherheit & Datenschutz
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-fg">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-fg px-2">
             Ihre Patienten{' '}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               vertrauen Ihnen
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-textSecondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-textSecondary max-w-3xl mx-auto leading-relaxed px-2">
             Wir nehmen Datenschutz ernst. Medizinische Daten gehören zu den sensibelsten Informationen überhaupt –
             deshalb erfüllen wir höchste Standards.
           </p>
@@ -184,7 +184,7 @@ export default function SecuritySection() {
           {securityFeatures.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white backdrop-blur-sm rounded-xl border border-borderLight p-6 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-1"
+              className="group bg-white backdrop-blur-sm rounded-xl border border-borderLight p-5 sm:p-6 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-1"
             >
               {/* Illustration */}
               <div className="transition-transform duration-500 group-hover:scale-105">
@@ -192,10 +192,10 @@ export default function SecuritySection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-fg mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-fg mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-textSecondary text-sm leading-relaxed">
+              <p className="text-textSecondary text-xs sm:text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -203,45 +203,45 @@ export default function SecuritySection() {
         </div>
 
         {/* Trust Banner */}
-        <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-8 text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-6 sm:p-8 text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-12">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div className="text-left">
-                <div className="font-bold text-fg">100% DSGVO</div>
-                <div className="text-sm text-textSecondary">Vollständig konform</div>
+                <div className="text-sm sm:text-base font-bold text-fg">100% DSGVO</div>
+                <div className="text-xs sm:text-sm text-textSecondary">Vollständig konform</div>
               </div>
             </div>
 
             <div className="hidden md:block h-12 w-px bg-borderLight"></div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div className="text-left">
-                <div className="font-bold text-fg">EU-Standards</div>
-                <div className="text-sm text-textSecondary">DSGVO-Partner</div>
+                <div className="text-sm sm:text-base font-bold text-fg">EU-Standards</div>
+                <div className="text-xs sm:text-sm text-textSecondary">DSGVO-Partner</div>
               </div>
             </div>
 
             <div className="hidden md:block h-12 w-px bg-borderLight"></div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div className="text-left">
-                <div className="font-bold text-fg">Höchste Sicherheitsstandards</div>
-                <div className="text-sm text-textSecondary">Regelmäßige Security-Audits</div>
+                <div className="text-sm sm:text-base font-bold text-fg whitespace-nowrap">Höchste Sicherheitsstandards</div>
+                <div className="text-xs sm:text-sm text-textSecondary">Regelmäßige Security-Audits</div>
               </div>
             </div>
           </div>

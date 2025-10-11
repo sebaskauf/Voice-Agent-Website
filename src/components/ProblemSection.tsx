@@ -15,7 +15,7 @@ export default function ProblemSection() {
         ref={ref as React.RefObject<HTMLDivElement>}
         className={'max-w-7xl mx-auto relative z-10 scroll-animate' + (isVisible ? ' scroll-animate-visible' : '')}
       >
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16 px-4">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -23,7 +23,7 @@ export default function ProblemSection() {
             Das Problem
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-fg">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-fg px-2">
             Kommt Ihnen das{' '}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               bekannt vor?
@@ -33,24 +33,24 @@ export default function ProblemSection() {
 
         <div className="space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center px-4">
               <Image
                 src="/stressed-receptionist.png"
                 alt="Gestresste Rezeptionistin am Telefon"
                 width={600}
                 height={600}
-                className="w-full h-auto max-w-lg floating-image-fade"
+                className="w-full h-auto max-w-md lg:max-w-lg floating-image-fade"
               />
             </div>
 
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-3 rounded-2xl border-2 border-red-200">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="space-y-4 sm:space-y-6 px-4">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-red-50 text-red-700 px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border-2 border-red-200">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
-                <span className="text-xl font-extrabold">Problem #1</span>
+                <span className="text-lg sm:text-xl font-extrabold">Problem #1</span>
               </div>
-              <h3 className="text-2xl font-bold text-fg">
+              <h3 className="text-xl sm:text-2xl font-bold text-fg">
                 Überlastetes Personal
               </h3>
               <div className="space-y-3">
@@ -98,14 +98,14 @@ export default function ProblemSection() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 lg:order-1 order-2">
-              <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-3 rounded-2xl border-2 border-red-200">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="space-y-4 sm:space-y-6 lg:order-1 order-2 px-4">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-red-50 text-red-700 px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border-2 border-red-200">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
-                <span className="text-xl font-extrabold">Problem #2</span>
+                <span className="text-lg sm:text-xl font-extrabold">Problem #2</span>
               </div>
-              <h3 className="text-2xl font-bold text-fg">
+              <h3 className="text-xl sm:text-2xl font-bold text-fg">
                 Frustrierte Patienten
               </h3>
               <div className="space-y-3">
@@ -151,29 +151,29 @@ export default function ProblemSection() {
               </div>
             </div>
 
-            <div className="relative lg:order-2 order-1 flex items-center justify-center lg:translate-x-8">
+            <div className="relative lg:order-2 order-1 flex items-center justify-center lg:translate-x-8 px-4">
               <Image
                 src="/frustrated-patient.png"
                 alt="Frustrierter Patient am Telefon"
                 width={600}
                 height={600}
-                className="w-full h-auto max-w-lg floating-image-fade"
+                className="w-full h-auto max-w-md lg:max-w-lg floating-image-fade"
               />
             </div>
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border-2 border-primary/30 p-8 max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold text-fg">
+        <div className="mt-12 sm:mt-16 text-center px-4">
+          <div className="inline-flex flex-col items-center gap-4 sm:gap-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border-2 border-primary/30 p-6 sm:p-8 max-w-3xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-bold text-fg">
               Das geht auch anders.
             </h3>
-            <p className="text-lg text-textSecondary max-w-2xl">
+            <p className="text-base sm:text-lg text-textSecondary max-w-2xl px-2">
               Jeder Anruf wird beantwortet. 24/7. Kein Stress. Keine verpassten Termine. Zufriedene Patienten.
             </p>
             <Link
               href="/#voice-demo"
-              className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-8 py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-out text-lg shadow-lg shadow-primary/20"
+              className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20"
             >
               <span>Lösung ansehen</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

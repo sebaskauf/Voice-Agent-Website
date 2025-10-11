@@ -7,6 +7,9 @@ export async function POST() {
     const apiKey = process.env.ELEVENLABS_API_KEY;
     const agentId = process.env.ELEVENLABS_AGENT_ID;
 
+    console.log('Agent ID being used:', agentId ? `${agentId.substring(0, 15)}...` : 'MISSING');
+    console.log('API Key present:', apiKey ? 'YES' : 'NO');
+
     if (!apiKey || !agentId) {
       console.error('Missing ElevenLabs credentials');
       return NextResponse.json(

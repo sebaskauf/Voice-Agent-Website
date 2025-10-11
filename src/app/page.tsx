@@ -45,21 +45,21 @@ export default function Home() {
           {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
           <div
             ref={heroRef as React.RefObject<HTMLDivElement>}
-            className={`absolute -right-[300px] top-[10%] bottom-[-20%] w-[1800px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
+            className={`absolute -right-[150px] top-[10%] bottom-[-20%] w-[1500px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
               heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}
           >
             <Image
               src="/hero-woman-hologram.png"
               alt="Frau mit Hologramm-Telefon"
-              width={1800}
-              height={2700}
+              width={1500}
+              height={2250}
               className="absolute right-0 h-full w-auto object-cover object-left opacity-60"
               style={{
                 maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
                 filter: 'blur(0px)',
-                transform: 'scale(1.6)',
+                transform: 'scale(1.3)',
                 transformOrigin: 'right center',
               }}
             />
@@ -86,7 +86,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:mr-auto lg:ml-[10%]">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>

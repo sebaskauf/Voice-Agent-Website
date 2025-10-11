@@ -86,7 +86,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:mr-auto lg:ml-[10%]">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:mr-auto lg:ml-[8%]">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>

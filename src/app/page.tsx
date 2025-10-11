@@ -13,11 +13,13 @@ import WaveBackground from '@/components/WaveBackground';
 import ProblemSection from '@/components/ProblemSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: kontaktRef, isVisible: kontaktVisible } = useScrollAnimation();
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
 
   const particles = useMemo(() =>
     Array.from({ length: 8 }, (_, i) => ({  // Reduced from 20 to 8 for cleaner healthcare look
@@ -40,8 +42,31 @@ export default function Home() {
           {/* Wave background */}
           <WaveBackground />
 
+          {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
+          <div
+            ref={heroRef as React.RefObject<HTMLDivElement>}
+            className={`absolute -right-[300px] top-[10%] bottom-[-20%] w-[1800px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
+              heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+            }`}
+          >
+            <Image
+              src="/hero-woman-hologram.png"
+              alt="Frau mit Hologramm-Telefon"
+              width={1800}
+              height={2700}
+              className="absolute right-0 h-full w-auto object-cover object-left opacity-60"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                filter: 'blur(0px)',
+                transform: 'scale(1.6)',
+                transformOrigin: 'right center',
+              }}
+            />
+          </div>
+
           {/* Subtle background gradient - Healthcare theme */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 pointer-events-none z-[1]"></div>
 
           {/* Minimal floating particles for professional look */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">

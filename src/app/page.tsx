@@ -19,7 +19,6 @@ export default function Home() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: kontaktRef, isVisible: kontaktVisible } = useScrollAnimation();
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
 
   const particles = useMemo(() =>
     Array.from({ length: 8 }, (_, i) => ({  // Reduced from 20 to 8 for cleaner healthcare look
@@ -44,10 +43,7 @@ export default function Home() {
 
           {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
           <div
-            ref={heroRef as React.RefObject<HTMLDivElement>}
-            className={`absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
-              heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-            }`}
+            className="absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0 opacity-100 translate-x-0 animate-fadeIn"
           >
             <Image
               src="/hero-woman-hologram.png"

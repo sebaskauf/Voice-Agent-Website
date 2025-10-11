@@ -172,25 +172,16 @@ export default function Home() {
                   title: "In 48 Stunden einsatzbereit",
                   description: "Ohne IT-Kenntnisse, ohne Umstellung Ihrer Telefonanlage. Sie bekommen eine Telefonnummer – fertig.",
                   color: "from-primary to-accent",
+                  image: "feature-48h.png",
                   illustration: (
-                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Clock background */}
-                      <circle cx="250" cy="175" r="120" fill="#007ACC" fillOpacity="0.1" />
-                      {/* Clock */}
-                      <circle cx="250" cy="175" r="90" fill="white" stroke="#007ACC" strokeWidth="4" />
-                      <circle cx="250" cy="175" r="5" fill="#007ACC" />
-                      {/* Hour hand */}
-                      <line x1="250" y1="175" x2="250" y2="120" stroke="#007ACC" strokeWidth="6" strokeLinecap="round" />
-                      {/* Minute hand */}
-                      <line x1="250" y1="175" x2="310" y2="175" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" />
-                      {/* Phone icon */}
-                      <rect x="320" y="120" width="80" height="120" rx="12" fill="#007ACC" />
-                      <rect x="330" y="130" width="60" height="90" rx="4" fill="white" />
-                      <circle cx="360" cy="230" r="8" fill="#00D4AA" />
-                      {/* Checkmark */}
-                      <circle cx="400" cy="80" r="30" fill="#00D4AA" />
-                      <path d="M385 80L395 90L415 70" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <Image
+                      src="/feature-48h.png"
+                      alt="48 Stunden Setup"
+                      width={400}
+                      height={400}
+                      priority
+                      className="w-full h-48 sm:h-56 object-contain mb-4 sm:mb-6"
+                    />
                   )
                 },
                 {
@@ -198,30 +189,15 @@ export default function Home() {
                   title: "100% DSGVO-konform",
                   description: "Patientendaten bleiben in Deutschland. Höchste Sicherheitsstandards, verschlüsselt, auf deutschen Servern.",
                   color: "from-accent to-primary",
+                  image: "feature-dsgvo.png",
                   illustration: (
-                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Server rack */}
-                      <rect x="150" y="80" width="200" height="200" rx="8" fill="#007ACC" fillOpacity="0.1" />
-                      <rect x="160" y="90" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
-                      <rect x="160" y="150" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
-                      <rect x="160" y="210" width="180" height="50" rx="4" fill="white" stroke="#007ACC" strokeWidth="3" />
-                      {/* Indicator lights */}
-                      <circle cx="180" cy="115" r="5" fill="#00D4AA" />
-                      <circle cx="200" cy="115" r="5" fill="#00D4AA" />
-                      <circle cx="180" cy="175" r="5" fill="#00D4AA" />
-                      <circle cx="200" cy="175" r="5" fill="#00D4AA" />
-                      <circle cx="180" cy="235" r="5" fill="#00D4AA" />
-                      <circle cx="200" cy="235" r="5" fill="#00D4AA" />
-                      {/* Shield with lock */}
-                      <path d="M380 120 L380 180 C380 200 360 210 340 210 C320 210 300 200 300 180 L300 120 L340 100 L380 120Z" fill="#00D4AA" />
-                      <rect x="325" y="145" width="30" height="35" rx="4" fill="white" fillOpacity="0.3" />
-                      <circle cx="340" cy="155" r="6" fill="white" />
-                      <line x1="340" y1="161" x2="340" y2="172" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                      {/* Germany flag colors accent */}
-                      <rect x="370" y="240" width="60" height="12" fill="#000000" fillOpacity="0.8" />
-                      <rect x="370" y="252" width="60" height="12" fill="#DD0000" />
-                      <rect x="370" y="264" width="60" height="12" fill="#FFCE00" />
-                    </svg>
+                    <Image
+                      src="/feature-dsgvo.png"
+                      alt="DSGVO Deutsche Server"
+                      width={400}
+                      height={400}
+                      className="w-full h-48 sm:h-56 object-contain mb-4 sm:mb-6"
+                    />
                   )
                 },
                 {
@@ -229,28 +205,15 @@ export default function Home() {
                   title: "Wächst mit Ihrer Praxis",
                   description: "Von 5 bis 500 Anrufe pro Tag – keine Mehrkosten, keine versteckten Gebühren.",
                   color: "from-primary via-accent to-primary",
+                  image: "feature-growth.png",
                   illustration: (
-                    <svg className="w-full h-36 sm:h-48 mb-4 sm:mb-6" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Growth chart background */}
-                      <rect x="80" y="60" width="340" height="220" rx="8" fill="#007ACC" fillOpacity="0.05" />
-                      {/* Axes */}
-                      <line x1="100" y1="260" x2="400" y2="260" stroke="#007ACC" strokeWidth="2" />
-                      <line x1="100" y1="80" x2="100" y2="260" stroke="#007ACC" strokeWidth="2" />
-                      {/* Bar chart */}
-                      <rect x="120" y="220" width="40" height="40" fill="#007ACC" fillOpacity="0.6" rx="4" />
-                      <rect x="180" y="200" width="40" height="60" fill="#007ACC" fillOpacity="0.7" rx="4" />
-                      <rect x="240" y="160" width="40" height="100" fill="#007ACC" fillOpacity="0.8" rx="4" />
-                      <rect x="300" y="120" width="40" height="140" fill="#00D4AA" rx="4" />
-                      {/* Growth arrow */}
-                      <path d="M130 210 L200 180 L270 140 L340 100" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                      <circle cx="130" cy="210" r="6" fill="#00D4AA" />
-                      <circle cx="200" cy="180" r="6" fill="#00D4AA" />
-                      <circle cx="270" cy="140" r="6" fill="#00D4AA" />
-                      <circle cx="340" cy="100" r="6" fill="#00D4AA" />
-                      {/* Upward arrow indicator */}
-                      <path d="M360 80 L380 60 L400 80" stroke="#00D4AA" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                      <line x1="380" y1="60" x2="380" y2="120" stroke="#00D4AA" strokeWidth="4" strokeLinecap="round" />
-                    </svg>
+                    <Image
+                      src="/feature-growth.png"
+                      alt="Skalierbarkeit und Wachstum"
+                      width={400}
+                      height={400}
+                      className="w-full h-48 sm:h-56 object-contain mb-4 sm:mb-6 mt-4"
+                    />
                   )
                 }
               ].map((feature, index) => (

@@ -42,16 +42,15 @@ export default function Home() {
           <WaveBackground />
 
           {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
-          <div
-            className="absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0 opacity-100 translate-x-0 animate-fadeIn"
-          >
+          <div className="absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0">
             <Image
               src="/hero-woman-hologram.png"
               alt="Frau mit Hologramm-Telefon"
               width={1600}
               height={2400}
               priority
-              loading="eager"
+              quality={100}
+              unoptimized
               className="absolute right-0 h-full w-auto object-cover object-left opacity-60"
               style={{
                 maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',

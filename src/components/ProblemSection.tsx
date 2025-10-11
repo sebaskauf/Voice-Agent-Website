@@ -172,10 +172,10 @@ export default function ProblemSection() {
               Jeder Anruf wird beantwortet. 24/7. Kein Stress. Keine verpassten Termine. Zufriedene Patienten.
             </p>
             <Link
-              href="/#voice-demo"
+              href="/kontakt"
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20"
             >
-              <span>Lösung ansehen</span>
+              <span>Jetzt Beratung sichern</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

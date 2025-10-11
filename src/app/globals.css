@@ -10,6 +10,10 @@
   --accent: #0EA5E9;
 }
 
+html {
+  background: #FFFFFF;
+}
+
 body {
   background: #FFFFFF;
   color: var(--fg);

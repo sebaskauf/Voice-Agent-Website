@@ -42,7 +42,7 @@ export default function Home() {
           {/* Wave background */}
           <WaveBackground />
 
-          {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
+          {/* Hero Background Image - Woman with hologram phone - Desktop */}
           <div
             ref={heroRef as React.RefObject<HTMLDivElement>}
             className={`absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
@@ -61,6 +61,26 @@ export default function Home() {
                 filter: 'blur(0px)',
                 transform: 'scale(1.45)',
                 transformOrigin: 'right center',
+              }}
+            />
+          </div>
+
+          {/* Hero Background Image - Mobile (subtle, centered) */}
+          <div
+            className={`absolute inset-0 lg:hidden pointer-events-none z-0 transition-all duration-1000 ease-out ${
+              heroVisible ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src="/hero-woman-hologram.png"
+              alt="Frau mit Hologramm-Telefon"
+              width={800}
+              height={1200}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-contain opacity-20"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 10%, black 30%, black 70%, transparent 90%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, black 30%, black 70%, transparent 90%)',
+                maxWidth: '600px',
               }}
             />
           </div>
@@ -86,7 +106,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:mr-auto lg:ml-[8%]">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:text-left lg:mr-auto lg:ml-[8%]">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>

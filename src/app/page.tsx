@@ -45,21 +45,21 @@ export default function Home() {
           {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
           <div
             ref={heroRef as React.RefObject<HTMLDivElement>}
-            className={`absolute -right-[150px] top-[10%] bottom-[-20%] w-[1500px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
+            className={`absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0 transition-all duration-1000 ease-out ${
               heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}
           >
             <Image
               src="/hero-woman-hologram.png"
               alt="Frau mit Hologramm-Telefon"
-              width={1500}
-              height={2250}
+              width={1600}
+              height={2400}
               className="absolute right-0 h-full w-auto object-cover object-left opacity-60"
               style={{
                 maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
                 filter: 'blur(0px)',
-                transform: 'scale(1.3)',
+                transform: 'scale(1.45)',
                 transformOrigin: 'right center',
               }}
             />

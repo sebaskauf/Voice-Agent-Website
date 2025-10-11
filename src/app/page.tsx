@@ -50,6 +50,8 @@ export default function Home() {
               alt="Frau mit Hologramm-Telefon"
               width={1600}
               height={2400}
+              priority
+              loading="eager"
               className="absolute right-0 h-full w-auto object-cover object-left opacity-60"
               style={{
                 maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',

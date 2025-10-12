@@ -11,6 +11,7 @@ import SecuritySection from '@/components/SecuritySection';
 import FAQ from '@/components/FAQ';
 import WaveBackground from '@/components/WaveBackground';
 import ProblemSection from '@/components/ProblemSection';
+import SolutionSection from '@/components/SolutionSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
@@ -130,6 +131,8 @@ export default function Home() {
         </section>
 
         <ProblemSection />
+
+        <SolutionSection />
 
         <VoiceAgentDemo />
 

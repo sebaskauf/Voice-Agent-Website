@@ -184,35 +184,38 @@ export default function Home() {
               </Link>
 
               {/* Trust Icons - Mobile Version - Three in a row below text */}
-              <div className="lg:hidden flex flex-row gap-0.5 mt-6 animate-fadeIn animation-delay-500 justify-center max-w-[95%] mx-auto">
-                <div className="flex items-center gap-0.5 bg-white/90 backdrop-blur-sm rounded-sm px-1 py-0.5 shadow-sm border border-green-100/50 flex-1 min-w-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-1.5 h-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="lg:hidden flex flex-row gap-1 mt-6 animate-fadeIn animation-delay-500 justify-center px-4">
+                <div className="flex flex-col items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1.5 shadow-sm border border-green-100/50">
+                  <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left min-w-0">
-                    <div className="text-[7px] font-bold text-fg leading-tight truncate">DSGVO</div>
+                  <div className="text-center">
+                    <div className="text-[9px] font-bold text-fg leading-tight whitespace-nowrap">100% DSGVO</div>
+                    <div className="text-[7px] text-textSecondary leading-tight whitespace-nowrap">Vollständig konform</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-0.5 bg-white/90 backdrop-blur-sm rounded-sm px-1 py-0.5 shadow-sm border border-green-100/50 flex-1 min-w-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-1.5 h-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1.5 shadow-sm border border-green-100/50">
+                  <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left min-w-0">
-                    <div className="text-[7px] font-bold text-fg leading-tight truncate">EU-Standard</div>
+                  <div className="text-center">
+                    <div className="text-[9px] font-bold text-fg leading-tight whitespace-nowrap">EU-Standards</div>
+                    <div className="text-[7px] text-textSecondary leading-tight whitespace-nowrap">DSGVO-Partner</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-0.5 bg-white/90 backdrop-blur-sm rounded-sm px-1 py-0.5 shadow-sm border border-green-100/50 flex-1 min-w-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-1.5 h-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1.5 shadow-sm border border-green-100/50">
+                  <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left min-w-0">
-                    <div className="text-[7px] font-bold text-fg leading-tight truncate">Sicher</div>
+                  <div className="text-center">
+                    <div className="text-[9px] font-bold text-fg leading-tight whitespace-nowrap">Höchste Sicherheit</div>
+                    <div className="text-[7px] text-textSecondary leading-tight whitespace-nowrap">Security-Audits</div>
                   </div>
                 </div>
               </div>

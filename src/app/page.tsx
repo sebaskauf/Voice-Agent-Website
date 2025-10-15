@@ -183,39 +183,39 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Link>
 
-              {/* Trust Icons - Mobile Version - Small and subtle on the side */}
-              <div className="lg:hidden absolute bottom-4 left-2 flex flex-col gap-1.5 animate-fadeIn animation-delay-500 max-w-[140px]">
-                <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-sm border border-green-100/50">
+              {/* Trust Icons - Mobile Version - Three in a row below text */}
+              <div className="lg:hidden flex flex-row gap-1 mt-6 animate-fadeIn animation-delay-500 justify-center px-2">
+                <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-1.5 py-1 shadow-sm border border-green-100/50 flex-1 min-w-0">
                   <div className="w-3 h-3 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
                     <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left">
-                    <div className="text-[9px] font-bold text-fg leading-tight">100% DSGVO</div>
-                    <div className="text-[7px] text-textSecondary leading-tight">Vollständig konform</div>
+                  <div className="text-left min-w-0">
+                    <div className="text-[8px] font-bold text-fg leading-tight truncate">DSGVO</div>
+                    <div className="text-[6px] text-textSecondary leading-tight truncate">Konform</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-sm border border-green-100/50">
+                <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-1.5 py-1 shadow-sm border border-green-100/50 flex-1 min-w-0">
                   <div className="w-3 h-3 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
                     <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left">
-                    <div className="text-[9px] font-bold text-fg leading-tight">EU-Standards</div>
-                    <div className="text-[7px] text-textSecondary leading-tight">DSGVO-Partner</div>
+                  <div className="text-left min-w-0">
+                    <div className="text-[8px] font-bold text-fg leading-tight truncate">EU-Standards</div>
+                    <div className="text-[6px] text-textSecondary leading-tight truncate">DSGVO</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-sm border border-green-100/50">
+                <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-md px-1.5 py-1 shadow-sm border border-green-100/50 flex-1 min-w-0">
                   <div className="w-3 h-3 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
                     <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div className="text-left">
-                    <div className="text-[9px] font-bold text-fg leading-tight">Höchste Sicherheit</div>
-                    <div className="text-[7px] text-textSecondary leading-tight">Security-Audits</div>
+                  <div className="text-left min-w-0">
+                    <div className="text-[8px] font-bold text-fg leading-tight truncate">Sicherheit</div>
+                    <div className="text-[6px] text-textSecondary leading-tight truncate">Audits</div>
                   </div>
                 </div>
               </div>

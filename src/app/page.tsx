@@ -140,44 +140,44 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-0 sm:mt-4 md:mt-8 px-4 lg:mr-auto lg:ml-[8%]">
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-0 sm:mt-4 md:mt-8 px-6 lg:mr-auto lg:ml-[8%]">
             <div className="animate-fadeIn">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>
                 <span className="block">
                   <RotatingText />
                 </span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textSecondary mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
+              <p className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textSecondary mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-1">
                 <span className="block sm:inline">Ihr KI-Telefon-Assistent nimmt Termine auf, beantwortet Patientenfragen</span>{' '}
                 <span className="block sm:inline">und entlastet Ihr Team – 24/7, in jeder Sprache, ohne Wartezeiten</span>
               </p>
 
               {/* Trust Elements - Interactive */}
-              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 md:gap-6 mb-6 sm:mb-8 md:mb-10 animate-fadeIn animation-delay-300 max-w-2xl mx-auto">
-                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3 md:gap-6 mb-5 sm:mb-8 md:mb-10 animate-fadeIn animation-delay-300 max-w-2xl mx-auto px-2">
+                <div className="group flex items-center gap-0.5 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-1.5 py-0.5 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3 h-3 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">DSGVO</span>
+                  <span className="text-[9px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">DSGVO</span>
                 </div>
-                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-0.5 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-1.5 py-0.5 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3 h-3 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">100% Erreichbarkeit</span>
+                  <span className="text-[9px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">100% Erreichbarkeit</span>
                 </div>
-                <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
-                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group flex items-center gap-0.5 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-1.5 py-0.5 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <svg className="w-3 h-3 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">In 48h einsatzbereit</span>
+                  <span className="text-[9px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">In 48h einsatzbereit</span>
                 </div>
               </div>
 
               <Link
                 href="/#voice-demo"
-                className="group inline-block bg-gradient-to-r from-primary via-accent to-primary text-white font-sora font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-base sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[48px]"
+                className="group inline-block bg-gradient-to-r from-primary via-accent to-primary text-white font-sora font-semibold px-6 sm:px-10 py-2.5 sm:py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-sm sm:text-lg shadow-lg shadow-primary/20 animate-fadeIn animation-delay-400 relative overflow-hidden min-h-[44px]"
               >
                 <span className="relative z-10">Kostenlos ausprobieren</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

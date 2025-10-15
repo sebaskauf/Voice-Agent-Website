@@ -57,8 +57,8 @@ export default function SolutionSection() {
       >
         {/* Section Header */}
         <div className="text-center mb-8 px-4">
-          <div className="inline-flex items-center gap-2 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4" style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="inline-flex items-center gap-2 sm:gap-3 text-green-700 px-5 py-3 sm:px-6 sm:py-4 rounded-full text-xl sm:text-2xl md:text-3xl font-bold mb-4" style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
+            <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Die Lösung
@@ -76,36 +76,45 @@ export default function SolutionSection() {
           </p>
         </div>
 
-        {/* Solution Cards */}
-        <div className="px-4 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+        {/* Solution Cards - Staggered Layout */}
+        <div className="px-4 max-w-4xl mx-auto">
+          <div className="space-y-4">
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-xl p-5 border hover:shadow-lg transition-shadow duration-300"
+                className="relative"
                 style={{
-                  borderColor: 'rgba(34, 197, 94, 0.15)',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+                  marginLeft: index % 2 === 0 ? '0' : 'auto',
+                  marginRight: index % 2 === 0 ? 'auto' : '0',
+                  maxWidth: '90%'
                 }}
               >
-                <div className="flex items-start gap-4">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg transition-colors duration-300" style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
-                      <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                <div
+                  className="bg-white rounded-xl p-5 sm:p-6 border hover:shadow-lg transition-shadow duration-300"
+                  style={{
+                    borderColor: 'rgba(34, 197, 94, 0.15)',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg" style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
+                        <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-fg">
-                      {solution.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-textSecondary leading-relaxed">
-                      {solution.description}
-                    </p>
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold mb-2 text-fg">
+                        {solution.title}
+                      </h3>
+                      <p className="text-base sm:text-lg text-fg/85 leading-relaxed font-medium">
+                        {solution.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -17,24 +17,11 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white border-b border-borderLight shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo with 3/4 cut-out O */}
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-fg flex items-center gap-0 transition-all duration-300 group">
-              <span className="relative inline-flex items-center">
-                {/* 3/4 O with cut-out on top-right */}
-                <svg className="w-5 h-5 mr-0.5" viewBox="0 0 24 24" fill="none">
-                  {/* 3/4 circle arc - missing top-right quarter */}
-                  <path
-                    d="M 12 4 A 8 8 0 1 0 20 12"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="text-fg"
-                  />
-                </svg>
-                <span>ptim</span>
-              </span>
+              <span>O</span>
+              <span>ptim</span>
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI</span>
               <span>te</span>
             </Link>

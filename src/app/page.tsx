@@ -43,6 +43,25 @@ export default function Home() {
           <WaveBackground />
 
           {/* Hero Background Image - Woman with hologram phone - Can overflow section boundaries */}
+          {/* Mobile version: small, top-right positioned */}
+          <div className="absolute -right-[50px] top-[10%] w-[400px] h-[300px] lg:hidden pointer-events-none z-0">
+            <Image
+              src="/hero-woman-hologram.png"
+              alt="Frau mit Hologramm-Telefon"
+              width={400}
+              height={600}
+              priority
+              quality={90}
+              className="absolute right-0 h-full w-auto object-cover object-left opacity-30"
+              style={{
+                maskImage: 'linear-gradient(to left, transparent 0%, black 30%, black 70%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 30%, black 70%, transparent 100%)',
+                transform: 'scale(1.2)',
+                transformOrigin: 'right center',
+              }}
+            />
+          </div>
+          {/* Desktop version: original large positioning */}
           <div className="absolute -right-[100px] top-[10%] bottom-[-20%] w-[1600px] hidden lg:block pointer-events-none z-0">
             <Image
               src="/hero-woman-hologram.png"
@@ -84,7 +103,44 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto text-center relative z-10 mt-4 sm:mt-8 md:mt-12 px-4 lg:mr-auto lg:ml-[8%]">
+          {/* Trust Icons - Bottom Left - Desktop */}
+          <div className="absolute bottom-8 left-4 sm:left-8 z-10 hidden lg:flex flex-col gap-3 animate-fadeIn animation-delay-500">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-md border border-green-100">
+              <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-bold text-fg">100% DSGVO</div>
+                <div className="text-[10px] text-textSecondary">Vollständig konform</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-md border border-green-100">
+              <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-bold text-fg">EU-Standards</div>
+                <div className="text-[10px] text-textSecondary">DSGVO-Partner</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-md border border-green-100">
+              <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs font-bold text-fg">Höchste Sicherheitsstandards</div>
+                <div className="text-[10px] text-textSecondary">Regelmäßige Security-Audits</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto text-center relative z-10 mt-0 sm:mt-4 md:mt-8 px-4 lg:mr-auto lg:ml-[8%]">
             <div className="animate-fadeIn">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 <span className="block text-fg">Nie wieder verpasste Anrufe</span>
@@ -94,7 +150,7 @@ export default function Home() {
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textSecondary mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeIn animation-delay-200 px-2">
                 <span className="block sm:inline">Ihr KI-Telefon-Assistent nimmt Termine auf, beantwortet Patientenfragen</span>{' '}
-                <span className="block sm:inline">und entlastet Ihr Team – 24/7, DSGVO-konform, auf Deutsch</span>
+                <span className="block sm:inline">und entlastet Ihr Team – 24/7, in jeder Sprache, ohne Wartezeiten</span>
               </p>
 
               {/* Trust Elements - Interactive */}
@@ -107,9 +163,9 @@ export default function Home() {
                 </div>
                 <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
                   <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">Natürliches Deutsch</span>
+                  <span className="text-[10px] sm:text-sm md:text-base text-fg font-medium group-hover:text-primary transition-colors duration-300 whitespace-nowrap">100% Erreichbarkeit</span>
                 </div>
                 <div className="group flex items-center gap-1 sm:gap-2 bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-lg px-2 py-1 sm:px-4 sm:py-2 hover:bg-primary/10 hover:border-primary/40 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
                   <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-primary group-hover:text-accent group-hover:scale-110 flex-shrink-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,6 +182,43 @@ export default function Home() {
                 <span className="relative z-10">Kostenlos ausprobieren</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Link>
+
+              {/* Trust Icons - Mobile Version */}
+              <div className="lg:hidden flex flex-col gap-2 mt-8 animate-fadeIn animation-delay-500">
+                <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm border border-green-100 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-fg">100% DSGVO</div>
+                    <div className="text-[10px] text-textSecondary">Vollständig konform</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm border border-green-100 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-fg">EU-Standards</div>
+                    <div className="text-[10px] text-textSecondary">DSGVO-Partner</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm border border-green-100 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-fg">Höchste Sicherheitsstandards</div>
+                    <div className="text-[10px] text-textSecondary">Regelmäßige Security-Audits</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -289,20 +382,43 @@ export default function Home() {
             className={`max-w-4xl mx-auto text-center relative z-10 scroll-animate ${kontaktVisible ? 'scroll-animate-visible' : ''}`}
           >
             <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6 text-fg">
-              Bereit für die{' '}
+              30 Tage kostenlos testen –{' '}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto]">
-                Transformation?
+                mit persönlichem Support
               </span>
             </h2>
-            <p className="text-xl text-fg/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Lassen Sie uns gemeinsam herausfinden, wie KI Ihr Unternehmen voranbringen kann
+            <p className="text-xl text-fg/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Überzeugen Sie sich selbst – wir begleiten Sie während der gesamten Testphase
             </p>
+
+            {/* Trust badges */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-4 mb-10 max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-primary/10 shadow-sm">
+                <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm sm:text-base font-medium text-fg">Persönliche Einrichtung durch unser Team</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-primary/10 shadow-sm">
+                <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm sm:text-base font-medium text-fg">30 Tage Testphase ohne Verpflichtung</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-primary/10 shadow-sm">
+                <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm sm:text-base font-medium text-fg">Direkter Ansprechpartner</span>
+              </div>
+            </div>
+
             <a
               href="/kontakt"
               className="group inline-block relative bg-gradient-to-r from-primary to-accent text-white font-sora font-semibold px-10 py-4 rounded-xl hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 focus:scale-[1.03] focus:ring-2 focus:ring-primary transition-all duration-500 ease-out text-lg shadow-lg shadow-primary/20 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Termin vereinbaren
+                Kostenlose Testphase starten
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

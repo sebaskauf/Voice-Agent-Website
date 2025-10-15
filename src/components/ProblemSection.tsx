@@ -8,16 +8,16 @@ export default function ProblemSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-bgDark/5 to-transparent"></div>
 
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         className={'max-w-7xl mx-auto relative z-10 scroll-animate' + (isVisible ? ' scroll-animate-visible' : '')}
       >
-        <div className="text-center mb-12 sm:mb-16 px-4">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="text-center mb-8 sm:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary/10 text-primary px-4 py-2 sm:px-5 sm:py-3 rounded-full text-lg sm:text-xl md:text-2xl font-bold mb-6">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             Das Problem
@@ -31,8 +31,8 @@ export default function ProblemSection() {
           </h2>
         </div>
 
-        <div className="space-y-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="space-y-8 sm:space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
             <div className="relative flex items-center justify-center px-4">
               <Image
                 src="/stressed-receptionist.png"
@@ -43,7 +43,7 @@ export default function ProblemSection() {
               />
             </div>
 
-            <div className="space-y-4 sm:space-y-6 px-4">
+            <div className="space-y-3 sm:space-y-4 px-4">
               <div className="inline-flex items-center gap-2 sm:gap-3 bg-red-50 text-red-700 px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border-2 border-red-200">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -97,8 +97,8 @@ export default function ProblemSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 sm:space-y-6 lg:order-1 order-2 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
+            <div className="space-y-3 sm:space-y-4 lg:order-1 order-2 px-4">
               <div className="inline-flex items-center gap-2 sm:gap-3 bg-red-50 text-red-700 px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border-2 border-red-200">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -136,7 +136,7 @@ export default function ProblemSection() {
                     </svg>
                   </div>
                   <p className="text-base text-textSecondary">
-                    <strong className="text-fg group-hover:text-red-700 transition-colors duration-300">Verlorene Termine</strong> durch Unerreichbarkeit
+                    <strong className="text-fg group-hover:text-red-700 transition-colors duration-300">Keine Termine vereinbart</strong> durch Unerreichbarkeit
                   </p>
                 </div>
               </div>
@@ -163,8 +163,8 @@ export default function ProblemSection() {
           </div>
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center px-4">
-          <div className="inline-flex flex-col items-center gap-4 sm:gap-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border-2 border-primary/30 p-6 sm:p-8 max-w-3xl mx-auto">
+        <div className="mt-8 sm:mt-10 text-center px-4">
+          <div className="inline-flex flex-col items-center gap-3 sm:gap-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border-2 border-primary/30 p-5 sm:p-6 max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold text-fg">
               Das geht auch anders.
             </h3>

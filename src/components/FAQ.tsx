@@ -70,31 +70,21 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* FAQ Accordion - single column, more interactive */}
+        {/* FAQ Accordion - optimized for performance */}
         <div className="max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`group bg-white backdrop-blur-sm rounded-2xl border transition-all duration-500 overflow-hidden hover:scale-[1.01] ${
-                openIndex === index
-                  ? 'border-primary/50 shadow-2xl shadow-primary/25 scale-[1.02]'
-                  : 'border-borderLight hover:border-primary/30 hover:shadow-xl'
-              }`}
+              className="bg-white rounded-2xl border border-borderLight overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left px-6 py-5 flex items-center gap-4 group"
+                className="w-full text-left px-6 py-5 flex items-center gap-4"
               >
                 {/* Icon */}
-                <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 ${
-                  openIndex === index
-                    ? 'bg-gradient-to-br from-primary to-accent shadow-lg scale-110'
-                    : 'bg-primary/10 group-hover:bg-primary/20 group-hover:scale-105'
-                }`}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <svg
-                    className={`w-6 h-6 transition-colors duration-500 ${
-                      openIndex === index ? 'text-white' : 'text-primary'
-                    }`}
+                    className="w-6 h-6 text-primary"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -104,22 +94,20 @@ export default function FAQ() {
                 </div>
 
                 <div className="flex-1">
-                  <span className={`text-lg sm:text-xl font-bold transition-colors duration-300 block ${
-                    openIndex === index ? 'text-primary' : 'text-fg group-hover:text-primary'
-                  }`}>
+                  <span className="text-lg sm:text-xl font-bold text-fg block">
                     {faq.question}
                   </span>
                 </div>
 
-                <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  openIndex === index
-                    ? 'bg-primary/20 rotate-180'
-                    : 'bg-primary/5 group-hover:bg-primary/10'
-                }`}>
+                <div
+                  className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center"
+                  style={{
+                    transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.3s ease-in-out'
+                  }}
+                >
                   <svg
-                    className={`w-5 h-5 transition-all duration-300 ${
-                      openIndex === index ? 'text-primary' : 'text-textSecondary group-hover:text-primary'
-                    }`}
+                    className="w-5 h-5 text-textSecondary"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -130,11 +118,14 @@ export default function FAQ() {
               </button>
 
               <div
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
+                style={{
+                  maxHeight: openIndex === index ? '400px' : '0',
+                  opacity: openIndex === index ? 1 : 0,
+                  transition: 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out'
+                }}
+                className="overflow-hidden"
               >
-                <div className="px-6 pb-6 pt-2 pl-[5.5rem] text-textSecondary leading-relaxed text-base border-t border-borderLight mt-2">
+                <div className="px-6 pb-6 pt-2 pl-[5.5rem] text-fg/80 leading-relaxed text-base sm:text-lg border-t border-borderLight mt-2">
                   {faq.answer}
                 </div>
               </div>
